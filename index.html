@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>诚意补习学院 · ChengYi Wangsa — 吉隆坡 Wangsa Maju 首选补习中心</title>
+  <meta name="description" content="诚意补习学院 ChengYi Wangsa，位于吉隆坡 Wangsa Maju，提供小学、初中、高中多科目辅导，Google 评分 4.8 ⭐。" />
+
+  <!-- Google Fonts - Handwritten Style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Patrick+Hand&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper:      '#fdfbf7',
+            'paper-dark': '#f5f0e8',
+            pencil:     '#2d2d2d',
+            muted:      '#e5e0d8',
+            accent:     '#ff4d4d',
+            'accent-blue': '#2d5da1',
+            'sticky-yellow': '#fff9c4',
+          },
+          fontFamily: {
+            hand: ['Kalam', 'cursive'],
+            body: ['Patrick Hand', 'cursive'],
+            sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Patrick Hand', 'Noto Sans SC', cursive;
+      background: #fdfbf7;
+      color: #2d2d2d;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Paper Texture Background ── */
+    .paper-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-color: #fdfbf7;
+      background-image: 
+        radial-gradient(#e5e0d8 1px, transparent 1px),
+        radial-gradient(#e5e0d8 1px, transparent 1px);
+      background-size: 24px 24px, 48px 48px;
+      background-position: 0 0, 12px 12px;
+      pointer-events: none;
+    }
+
+    /* ── Wobbly Border Radius Values ── */
+    .wobbly-sm { border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; }
+    .wobbly { border-radius: 20px 200px 20px 200px / 200px 20px 200px 20px; }
+    .wobbly-md { border-radius: 30px 250px 30px 250px / 250px 30px 250px 30px; }
+    .wobbly-lg { border-radius: 40px 300px 40px 300px / 300px 40px 300px 40px; }
+    .wobbly-xl { border-radius: 60px 400px 60px 400px / 400px 60px 400px 60px; }
+
+    /* ── Hard Offset Shadows ── */
+    .shadow-sketch {
+      box-shadow: 4px 4px 0px 0px #2d2d2d;
+    }
+    .shadow-sketch-lg {
+      box-shadow: 6px 6px 0px 0px #2d2d2d;
+    }
+    .shadow-sketch-xl {
+      box-shadow: 8px 8px 0px 0px #2d2d2d;
+    }
+    .shadow-sketch-hover:hover {
+      box-shadow: 2px 2px 0px 0px #2d2d2d;
+      transform: translate(2px, 2px);
+    }
+    .shadow-sketch-active:active {
+      box-shadow: 0px 0px 0px 0px #2d2d2d;
+      transform: translate(4px, 4px);
+    }
+
+    /* ── Content Layer ── */
+    .content-layer { position: relative; z-index: 10; }
+
+    /* ── Typography ── */
+    .font-hand { font-family: 'Kalam', cursive; }
+    .font-body { font-family: 'Patrick Hand', cursive; }
+    
+    /* ── Hand-drawn Underline ── */
+    .hand-underline {
+      position: relative;
+      display: inline-block;
+    }
+    .hand-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #ff4d4d;
+      border-radius: 50% 50% 50% 50% / 100% 100% 0 0;
+      transform: rotate(-1deg);
+    }
+
+    /* ── Navbar ── */
+    #navbar {
+      transition: all 0.3s ease;
+    }
+    #navbar.scrolled {
+      background: rgba(253, 251, 247, 0.95) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 3px solid #2d2d2d;
+    }
+
+    /* ── Nav Links ── */
+    .nav-link {
+      position: relative;
+      color: #2d2d2d;
+      font-size: 16px;
+      font-weight: 400;
+      transition: all 0.2s;
+      padding: 6px 12px;
+      font-family: 'Patrick Hand', cursive;
+    }
+    .nav-link:hover {
+      color: #ff4d4d;
+      transform: rotate(-1deg);
+    }
+    .nav-link.active-link {
+      color: #ff4d4d;
+      font-weight: 700;
+    }
+    .nav-link.active-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      width: 80%;
+      height: 2px;
+      background: #ff4d4d;
+      border-radius: 50%;
+      transform: rotate(-2deg);
+    }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      background: #ffffff;
+      color: #2d2d2d;
+      font-weight: 700;
+      font-size: 18px;
+      border: 3px solid #2d2d2d;
+      padding: 12px 28px;
+      cursor: pointer;
+      box-shadow: 4px 4px 0px 0px #2d2d2d;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      font-family: 'Patrick Hand', cursive;
+    }
+    .btn-primary:hover {
+      background: #ff4d4d;
+      color: #ffffff;
+      box-shadow: 2px 2px 0px 0px #2d2d2d;
+      transform: translate(2px, 2px);
+    }
+    .btn-primary:active {
+      box-shadow: 0px 0px 0px 0px #2d2d2d;
+      transform: translate(4px, 4px);
+    }
+
+    .btn-secondary {
+      background: #e5e0d8;
+      color: #2d2d2d;
+      font-weight: 400;
+      font-size: 16px;
+      border: 2px solid #2d2d2d;
+      padding: 10px 20px;
+      cursor: pointer;
+      box-shadow: 3px 3px 0px 0px #2d2d2d;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      font-family: 'Patrick Hand', cursive;
+    }
+    .btn-secondary:hover {
+      background: #2d5da1;
+      color: #ffffff;
+      box-shadow: 1px 1px 0px 0px #2d2d2d;
+      transform: translate(2px, 2px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #2d2d2d;
+      font-weight: 400;
+      font-size: 16px;
+      border: 2px dashed #2d2d2d;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      font-family: 'Patrick Hand', cursive;
+    }
+    .btn-ghost:hover {
+      background: rgba(255, 77, 77, 0.1);
+      border-style: solid;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: #ffffff;
+      border: 3px solid #2d2d2d;
+      position: relative;
+      overflow: visible;
+      transition: all 0.2s ease;
+      box-shadow: 4px 4px 0px 0px rgba(45, 45, 45, 0.15);
+    }
+    .card:hover {
+      transform: rotate(-1deg) translateY(-4px);
+      box-shadow: 6px 6px 0px 0px rgba(45, 45, 45, 0.2);
+    }
+
+    .card-sticky {
+      background: #fff9c4;
+      border: 3px solid #2d2d2d;
+      position: relative;
+      box-shadow: 4px 4px 0px 0px #2d2d2d;
+    }
+    .card-sticky::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      width: 60px;
+      height: 20px;
+      background: rgba(200, 200, 200, 0.6);
+      border: 1px solid rgba(45, 45, 45, 0.3);
+    }
+
+    /* ── Tape Effect ── */
+    .tape {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-3deg);
+      width: 80px;
+      height: 24px;
+      background: rgba(200, 200, 200, 0.5);
+      border: 1px solid rgba(45, 45, 45, 0.2);
+    }
+
+    /* ── Pin Effect ── */
+    .pin {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 16px;
+      background: #ff4d4d;
+      border-radius: 50%;
+      border: 2px solid #2d2d2d;
+      box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    }
+
+    /* ── Mobile Menu ── */
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.2s;
+      opacity: 0;
+    }
+    #mobile-menu.open { 
+      max-height: 400px; 
+      opacity: 1; 
+    }
+
+    /* ── Tab Panel ── */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: grid; }
+
+    /* ── Tab Button ── */
+    .tab-btn {
+      font-size: 16px;
+      font-weight: 700;
+      padding: 10px 24px;
+      color: #2d2d2d;
+      border: 2px solid #2d2d2d;
+      background: #ffffff;
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: 'Patrick Hand', cursive;
+      box-shadow: 3px 3px 0px 0px #2d2d2d;
+    }
+    .tab-btn:hover { 
+      background: #e5e0d8; 
+      transform: translate(1px, 1px);
+      box-shadow: 2px 2px 0px 0px #2d2d2d;
+    }
+    .tab-btn.active {
+      background: #ff4d4d;
+      color: #ffffff;
+      box-shadow: 2px 2px 0px 0px #2d2d2d;
+      transform: translate(1px, 1px);
+    }
+
+    /* ── Form ── */
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #2d2d2d;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 16px;
+      background: #ffffff;
+      color: #2d2d2d;
+      transition: all 0.2s;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: #2d5da1;
+      box-shadow: 3px 3px 0px 0px #2d5da1;
+      transform: translate(-2px, -2px);
+    }
+    .form-input::placeholder { color: rgba(45, 45, 45, 0.4); }
+
+    /* ── WhatsApp Float ── */
+    #wa-float {
+      position: fixed;
+      bottom: 24px; 
+      right: 24px;
+      z-index: 9999;
+      width: 56px; 
+      height: 56px;
+      background: #25D366;
+      border: 3px solid #2d2d2d;
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      box-shadow: 4px 4px 0px 0px #2d2d2d;
+      transition: all 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    #wa-float:hover {
+      transform: rotate(-5deg) scale(1.05);
+      box-shadow: 6px 6px 0px 0px #2d2d2d;
+    }
+
+    /* ── Lang Button ── */
+    .lang-btn {
+      font-size: 14px;
+      padding: 6px 12px;
+      color: #2d2d2d;
+      transition: all 0.15s;
+      cursor: pointer;
+      border: 2px solid transparent;
+      background: transparent;
+      font-family: 'Patrick Hand', cursive;
+    }
+    .lang-btn:hover { 
+      color: #ff4d4d; 
+      transform: rotate(-2deg);
+    }
+    .lang-btn.active { 
+      color: #ff4d4d; 
+      border-color: #2d2d2d;
+      background: #fff9c4;
+      font-weight: 700;
+      box-shadow: 2px 2px 0px 0px #2d2d2d;
+    }
+
+    /* ── Section Divider ── */
+    .section-divider {
+      height: 3px;
+      background: repeating-linear-gradient(
+        90deg,
+        #2d2d2d 0px,
+        #2d2d2d 10px,
+        transparent 10px,
+        transparent 15px
+      );
+      margin: 0 auto;
+      max-width: 200px;
+      transform: rotate(-0.5deg);
+    }
+
+    /* ── Tag Badge ── */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 2px solid #2d2d2d;
+      background: #fff9c4;
+      font-family: 'Patrick Hand', cursive;
+      box-shadow: 2px 2px 0px 0px #2d2d2d;
+      transform: rotate(-1deg);
+    }
+
+    /* ── Feature Icon ── */
+    .feature-icon {
+      width: 56px; 
+      height: 56px;
+      border: 2px solid #2d2d2d;
+      background: #ffffff;
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 3px 3px 0px 0px #2d2d2d;
+    }
+
+    /* ── Fade-up Animation ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px) rotate(-1deg);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-up.visible { 
+      opacity: 1; 
+      transform: translateY(0) rotate(0deg); 
+    }
+    .delay-1 { transition-delay: 0.08s; }
+    .delay-2 { transition-delay: 0.16s; }
+    .delay-3 { transition-delay: 0.24s; }
+    .delay-4 { transition-delay: 0.32s; }
+
+    /* ── Doodle Decorations ── */
+    .doodle-circle {
+      position: absolute;
+      border: 2px dashed #ff4d4d;
+      border-radius: 50%;
+      animation: bounce 3s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+
+    .doodle-arrow {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+    }
+    .doodle-arrow svg {
+      width: 100%;
+      height: 100%;
+      stroke: #ff4d4d;
+      stroke-width: 2;
+      fill: none;
+      stroke-dasharray: 4 4;
+    }
+
+    /* ── Star Rating ── */
+    .star-gold { color: #F5A623; }
+
+    /* ── Map Wrapper ── */
+    .map-wrapper {
+      border: 3px solid #2d2d2d;
+      overflow: hidden;
+      box-shadow: 4px 4px 0px 0px #2d2d2d;
+    }
+
+    /* ── Speech Bubble ── */
+    .speech-bubble {
+      position: relative;
+      background: #ffffff;
+      border: 3px solid #2d2d2d;
+      padding: 20px;
+      box-shadow: 4px 4px 0px 0px #2d2d2d;
+    }
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 30px;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 15px solid #2d2d2d;
+    }
+    .speech-bubble::before {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 33px;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 12px solid #ffffff;
+      z-index: 1;
+    }
+
+    /* ── Check List ── */
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .check-box {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #2d2d2d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: #fff9c4;
+    }
+
+    /* ── Focus States ── */
+    *:focus-visible {
+      outline: 3px dashed #ff4d4d;
+      outline-offset: 3px;
+    }
+
+    /* ── Reduced Motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { transition: opacity 0.3s; transform: none; }
+      .fade-up.visible { transform: none; }
+      .doodle-circle { animation: none; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 767px) {
+      .wobbly-lg { border-radius: 30px 150px 30px 150px / 150px 30px 150px 30px; }
+      .wobbly-xl { border-radius: 40px 200px 40px 200px / 200px 40px 200px 40px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Paper Texture Background -->
+  <div class="paper-bg"></div>
+
+  <!-- Content -->
+  <div class="content-layer">
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+  <div class="max-w-5xl mx-auto flex items-center justify-between h-16 px-5 md:px-8">
+
+    <!-- Logo -->
+    <a href="#home" class="flex items-center gap-3 select-none transform -rotate-1">
+      <div class="w-12 h-12 bg-white border-[3px] border-pencil shadow-sketch flex items-center justify-center overflow-hidden wobbly-sm">
+        <img src="logo.png" alt="诚意教育" class="w-10 h-10 object-contain" />
+      </div>
+      <span class="text-pencil font-hand font-bold text-lg hidden sm:block">诚意补习学院</span>
+    </a>
+
+    <!-- Nav links (desktop) -->
+    <ul class="hidden md:flex items-center gap-2">
+      <li><a href="#home"    class="nav-link active-link transform rotate-1"><span class="tr" data-zh="首页" data-ms="Utama" data-en="Home">首页</span></a></li>
+      <li><a href="#about"   class="nav-link transform -rotate-1"><span class="tr" data-zh="关于" data-ms="Tentang" data-en="About">关于</span></a></li>
+      <li><a href="#courses" class="nav-link transform rotate-1"><span class="tr" data-zh="课程" data-ms="Kursus" data-en="Courses">课程</span></a></li>
+      <li><a href="#reviews" class="nav-link transform -rotate-1"><span class="tr" data-zh="评价" data-ms="Ulasan" data-en="Reviews">评价</span></a></li>
+      <li><a href="#contact" class="nav-link transform rotate-1"><span class="tr" data-zh="联系" data-ms="Hubungi" data-en="Contact">联系</span></a></li>
+    </ul>
+
+    <!-- Right actions -->
+    <div class="flex items-center gap-2">
+      <div class="flex items-center gap-1 mr-2">
+        <button data-lang="zh" class="lang-btn active">中</button>
+        <button data-lang="ms" class="lang-btn transform rotate-2">MS</button>
+        <button data-lang="en" class="lang-btn transform -rotate-1">EN</button>
+      </div>
+      <a href="#contact" class="btn-primary hidden md:inline-flex text-base py-2 px-5 transform -rotate-1">
+        <i class="fa-solid fa-calendar-check"></i>
+        <span class="tr" data-zh="免费试听" data-ms="Percubaan" data-en="Free Trial">免费试听</span>
+      </a>
+      <button id="hamburger" class="md:hidden text-pencil text-xl p-2 border-2 border-pencil bg-white shadow-sketch" aria-label="菜单">
+        <i class="fa-solid fa-bars" id="ham-icon"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden bg-paper border-b-3 border-pencil shadow-lg">
+    <ul class="flex flex-col px-6 py-4 gap-3 text-lg font-body">
+      <li><a href="#home"    class="block py-2 text-pencil hover:text-accent transition-colors" onclick="closeMobile()"><span class="tr" data-zh="首页" data-ms="Utama" data-en="Home">首页</span></a></li>
+      <li><a href="#about"   class="block py-2 text-pencil hover:text-accent transition-colors" onclick="closeMobile()"><span class="tr" data-zh="关于我们" data-ms="Tentang Kami" data-en="About Us">关于我们</span></a></li>
+      <li><a href="#courses" class="block py-2 text-pencil hover:text-accent transition-colors" onclick="closeMobile()"><span class="tr" data-zh="课程" data-ms="Kursus" data-en="Courses">课程</span></a></li>
+      <li><a href="#reviews" class="block py-2 text-pencil hover:text-accent transition-colors" onclick="closeMobile()"><span class="tr" data-zh="评价" data-ms="Ulasan" data-en="Reviews">评价</span></a></li>
+      <li><a href="#contact" class="block py-2 text-pencil hover:text-accent transition-colors" onclick="closeMobile()"><span class="tr" data-zh="联系我们" data-ms="Hubungi Kami" data-en="Contact">联系我们</span></a></li>
+      <li class="pt-2"><a href="https://wa.me/60122467900" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 w-full justify-center"><i class="fa-brands fa-whatsapp"></i> <span class="tr" data-zh="免费咨询" data-ms="Hubungi" data-en="Free Consult">免费咨询</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO BANNER
+════════════════════════════════════════════ -->
+<section id="home" class="relative pt-28 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+  <div class="relative z-10 max-w-5xl mx-auto px-5 md:px-8">
+
+    <div class="text-center mb-10 md:mb-14">
+      <!-- Doodle decorations -->
+      <div class="doodle-circle w-16 h-16 top-20 left-10 hidden md:block"></div>
+      <div class="doodle-circle w-12 h-12 top-32 right-20 hidden md:block" style="animation-delay: 1s;"></div>
+      
+      <!-- Logo Showcase -->
+      <div class="fade-up mb-8 flex justify-center">
+        <div class="relative inline-block transform rotate-1">
+          <!-- Tape decoration -->
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-28 h-8 bg-pencil/20 transform -rotate-6 z-10"></div>
+          <!-- Logo card -->
+          <div class="bg-white border-[4px] border-pencil shadow-sketch-xl p-6 md:p-8 wobbly-lg">
+            <img src="logo.png" alt="诚意教育" class="w-48 h-48 md:w-64 md:h-64 object-contain" />
+          </div>
+          <!-- Pin decoration -->
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-accent border-[3px] border-pencil shadow-sm z-20"></div>
+        </div>
+      </div>
+      
+      <!-- Rating badge -->
+      <div class="fade-up delay-1 inline-flex items-center gap-2 px-5 py-3 text-base mb-6 bg-white border-2 border-pencil shadow-sketch transform -rotate-1">
+        <span class="star-gold text-lg">★★★★★</span>
+        <span class="text-pencil font-hand font-bold">4.8</span>
+        <span class="text-pencil/60">·</span>
+        <span class="text-pencil/80"><span class="tr" data-zh="79 条家长好评" data-ms="79 ulasan" data-en="79 reviews">79 条家长好评</span></span>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="fade-up delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-hand font-bold leading-tight mb-6 tracking-tight">
+        <span class="text-pencil"><span class="tr" data-zh="专注中小学" data-ms="Tumpuan Akademik" data-en="Focused on">专注中小学</span></span><br />
+        <span class="text-accent hand-underline transform rotate-1 inline-block"><span class="tr" data-zh="文化课提升" data-ms="Peningkatan" data-en="Academic Excellence">文化课提升</span></span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="fade-up delay-3 text-pencil/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-body">
+        <span class="tr" data-zh="一对一定制 · 小班精讲 · 高效提分" data-ms="Peribadi · Kelas Kecil · Peningkatan" data-en="Personalised · Small Class · Proven Results">一对一定制 · 小班精讲 · 高效提分</span>
+      </p>
+    </div>
+
+    <!-- Hero Form -->
+    <div class="fade-up delay-3 max-w-2xl mx-auto">
+      <div class="card p-6 md:p-8 wobbly-lg relative">
+        <div class="tape"></div>
+        <h3 class="text-pencil font-hand font-bold text-xl mb-1 text-center">
+          <span class="tr" data-zh="立即预约免费试听课" data-ms="Tempoh Kelas Percuma" data-en="Book a Free Trial">立即预约免费试听课</span>
+        </h3>
+        <p class="text-pencil/60 text-base mb-5 text-center font-body">
+          <span class="tr" data-zh="填写信息，我们将在 24 小时内联系您" data-ms="Isi maklumat, kami akan hubungi anda" data-en="Fill in the form and we'll contact you">填写信息，我们将在 24 小时内联系您</span>
+        </p>
+        <form id="hero-form" onsubmit="handleHeroSubmit(event)" class="grid sm:grid-cols-3 gap-3">
+          <div>
+            <input type="text" required class="form-input wobbly-sm" placeholder="学生姓名" />
+          </div>
+          <div>
+            <select required class="form-input wobbly-sm text-pencil/60" id="hero-grade">
+              <option value="" disabled selected>选择年级</option>
+              <option value="小学 Year 1-3">小学 Year 1–3</option>
+              <option value="小学 Year 4-6">小学 Year 4–6</option>
+              <option value="初中 Form 1-3">初中 Form 1–3</option>
+              <option value="高中 Form 4-5">高中 Form 4–5</option>
+            </select>
+          </div>
+          <div>
+            <input type="tel" required class="form-input wobbly-sm" placeholder="+60 12-XXX XXXX" />
+          </div>
+          <div class="sm:col-span-3">
+            <button type="submit" class="btn-primary w-full py-3 text-lg wobbly">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span class="tr" data-zh="立即预约" data-ms="Tempoh Sekarang" data-en="Book Now">立即预约</span>
+            </button>
+          </div>
+        </form>
+        <p class="text-pencil/50 text-sm mt-3 text-center font-body">
+          <i class="fa-solid fa-lock mr-1"></i>
+          <span class="tr" data-zh="您的信息将严格保密" data-ms="Maklumat anda sulit" data-en="Your information is confidential">您的信息将严格保密</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="fade-up delay-4 grid grid-cols-3 gap-6 md:gap-12 mt-12 md:mt-16 max-w-xl mx-auto">
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-hand font-bold text-pencil">4.8<span class="star-gold text-xl">★</span></div>
+        <div class="text-pencil/60 text-sm mt-1 font-body"><span class="tr" data-zh="Google 评分" data-ms="Google" data-en="Google">Google 评分</span></div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-hand font-bold text-pencil">500<span class="text-accent">+</span></div>
+        <div class="text-pencil/60 text-sm mt-1 font-body"><span class="tr" data-zh="注册学生" data-ms="Pelajar" data-en="Students">注册学生</span></div>
+      </div>
+      <div class="text-center">
+        <div class="text-3xl md:text-4xl font-hand font-bold text-pencil">10<span class="text-accent">年</span></div>
+        <div class="text-pencil/60 text-sm mt-1 font-body"><span class="tr" data-zh="教学经验" data-ms="Pengalaman" data-en="Experience">教学经验</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FEATURES (为什么选择诚意) — Bento Grid
+════════════════════════════════════════════ -->
+<div class="section-divider"></div>
+<section class="py-20 md:py-32 px-5 md:px-8">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-12 fade-up">
+      <span class="tag mb-4 transform -rotate-2">
+        <i class="fa-solid fa-shield-check"></i>
+        <span class="tr" data-zh="值得信赖" data-ms="Boleh Dipercayai" data-en="Trusted">值得信赖</span>
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-hand font-bold text-pencil tracking-tight mt-4">
+        <span class="tr" data-zh="为什么选择诚意补习学院？" data-ms="Mengapa Memilih ChengYi?" data-en="Why Choose ChengYi?">为什么选择诚意补习学院？</span>
+      </h2>
+    </div>
+
+    <!-- Bento grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Hero card -->
+      <div class="card p-8 md:col-span-2 md:row-span-2 flex flex-col justify-between wobbly-lg fade-up transform rotate-1">
+        <div>
+          <div class="feature-icon mb-5 bg-accent/10 transform -rotate-2">
+            <i class="fa-solid fa-user-graduate text-accent text-xl"></i>
+          </div>
+          <h3 class="text-xl md:text-2xl font-hand font-bold text-pencil mb-3"><span class="tr" data-zh="持证专业教师团队" data-ms="Guru Berlesen Profesional" data-en="Certified Professional Tutors">持证专业教师团队</span></h3>
+          <p class="text-pencil/70 text-base leading-relaxed max-w-md font-body"><span class="tr" data-zh="经验丰富的注册教师，深谙 KSSR/KSSM 课程纲要，精准把握考点，为每位学生量身定制教学方案。" data-ms="Guru berdaftar berpengalaman, mahir silibus KSSR/KSSM." data-en="Experienced registered teachers well-versed in KSSR/KSSM syllabus.">经验丰富的注册教师，深谙 KSSR/KSSM 课程纲要，精准把握考点，为每位学生量身定制教学方案。</span></p>
+        </div>
+        <div class="flex items-center gap-6 mt-6">
+          <div class="text-center">
+            <div class="text-3xl font-hand font-bold text-pencil">100%</div>
+            <div class="text-pencil/60 text-sm font-body"><span class="tr" data-zh="持证教师" data-ms="Berlesen" data-en="Certified">持证教师</span></div>
+          </div>
+          <div class="w-px h-12 bg-pencil/20"></div>
+          <div class="text-center">
+            <div class="text-3xl font-hand font-bold text-pencil">8<span class="text-accent text-lg">+</span></div>
+            <div class="text-pencil/60 text-sm font-body"><span class="tr" data-zh="年平均教龄" data-ms="Thn Pengalaman" data-en="Yrs Avg Exp">年平均教龄</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Small class -->
+      <div class="card p-6 flex flex-col justify-center wobbly fade-up delay-1 transform -rotate-1">
+        <div>
+          <div class="feature-icon mb-4 bg-accent-blue/10 transform rotate-2">
+            <i class="fa-solid fa-users text-accent-blue text-lg"></i>
+          </div>
+          <h3 class="text-lg font-hand font-bold text-pencil mb-2"><span class="tr" data-zh="小班精教" data-ms="Kelas Kecil" data-en="Small Classes">小班精教</span></h3>
+          <p class="text-pencil/70 text-base leading-relaxed font-body"><span class="tr" data-zh="每班最多 10 人，确保每位学生充分关注" data-ms="Maksimum 10 orang, perhatian penuh" data-en="Max 10 per class, ensuring full attention">每班最多 10 人，确保每位学生充分关注</span></p>
+        </div>
+      </div>
+
+      <!-- Card 3: Progress tracking -->
+      <div class="card p-6 flex flex-col justify-center wobbly fade-up delay-2 transform rotate-1">
+        <div>
+          <div class="feature-icon mb-4 bg-yellow-100 transform -rotate-1">
+            <i class="fa-solid fa-chart-line text-yellow-600 text-lg"></i>
+          </div>
+          <h3 class="text-lg font-hand font-bold text-pencil mb-2"><span class="tr" data-zh="成绩跟踪" data-ms="Penjejakan Markah" data-en="Progress Tracking">成绩跟踪</span></h3>
+          <p class="text-pencil/70 text-base leading-relaxed font-body"><span class="tr" data-zh="定期评估，及时调整教学方案" data-ms="Penilaian berkala, pelarasan tepat" data-en="Regular assessments, timely adjustments">定期评估，及时调整教学方案</span></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     ABOUT US
+════════════════════════════════════════════ -->
+<div class="section-divider"></div>
+<section id="about" class="py-20 md:py-32 px-5 md:px-8">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+      <!-- Left: text -->
+      <div class="fade-up">
+        <span class="tag mb-4 transform rotate-1">
+          <i class="fa-solid fa-building-columns"></i>
+          About Us
+        </span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-hand font-bold text-pencil tracking-tight mt-4 mb-6">
+          <span class="tr" data-zh="十年专注，只为每一位学子" data-ms="10 Tahun Komitmen" data-en="10 Years of Dedication">十年专注，只为每一位学子</span>
+        </h2>
+        <p class="text-pencil/70 text-base leading-relaxed mb-4 font-body">
+          <span class="tr" data-zh="诚意补习学院（ChengYi Wangsa）成立于吉隆坡 Wangsa Maju，秉承「诚意育人，精益求精」的办学宗旨，十余年来专注为本地中小学生提供高质量、个性化的课后辅导服务。" data-ms="ChengYi Wangsa ditubuhkan di Wangsa Maju, KL, dengan misi 'Pendidikan Ikhlas'." data-en="Founded in Wangsa Maju, KL, ChengYi Wangsa embodies the mission of 'Sincere Education'.">诚意补习学院（ChengYi Wangsa）成立于吉隆坡 Wangsa Maju，秉承「诚意育人，精益求精」的办学宗旨，十余年来专注为本地中小学生提供高质量、个性化的课后辅导服务。</span>
+        </p>
+        <p class="text-pencil/70 text-base leading-relaxed mb-4 font-body">
+          <span class="tr" data-zh="我们的教学团队由经验丰富的注册教师组成，深谙 KSSR 及 KSSM 课程纲要，采用小班精教模式，确保每位学生都能获得充分的关注与指导。" data-ms="Pasukan pengajaran kami terdiri daripada guru berdaftar yang berpengalaman." data-en="Our teaching team consists of experienced registered teachers.">我们的教学团队由经验丰富的注册教师组成，深谙 KSSR 及 KSSM 课程纲要，采用小班精教模式，确保每位学生都能获得充分的关注与指导。</span>
+        </p>
+        <p class="text-pencil/70 text-base leading-relaxed mb-8 font-body">
+          <span class="tr" data-zh="Google 4.8 分的口碑背后，是无数家长与学生的信赖。我们相信：用心的教育，是对每个家庭最好的回报。" data-ms="Di sebalik penilaian Google 4.8 adalah kepercayaan ramai ibu bapa." data-en="Behind the Google 4.8 rating lies the trust of countless parents.">Google 4.8 分的口碑背后，是无数家长与学生的信赖。我们相信：用心的教育，是对每个家庭最好的回报。</span>
+        </p>
+
+        <!-- Values grid -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="check-item">
+            <div class="check-box">
+              <i class="fa-solid fa-check text-accent text-sm"></i>
+            </div>
+            <span class="text-pencil font-body">小班精教</span>
+          </div>
+          <div class="check-item">
+            <div class="check-box">
+              <i class="fa-solid fa-check text-accent text-sm"></i>
+            </div>
+            <span class="text-pencil font-body">进度追踪</span>
+          </div>
+          <div class="check-item">
+            <div class="check-box">
+              <i class="fa-solid fa-check text-accent text-sm"></i>
+            </div>
+            <span class="text-pencil font-body">考试专训</span>
+          </div>
+          <div class="check-item">
+            <div class="check-box">
+              <i class="fa-solid fa-check text-accent text-sm"></i>
+            </div>
+            <span class="text-pencil font-body">便利位置</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: map -->
+      <div class="fade-up delay-2">
+        <div class="map-wrapper wobbly-lg transform -rotate-1">
+          <iframe
+            width="100%" height="350" style="border:0; display:block;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.6745789243217!2d101.73446307587826!3d3.198336256724289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc3605e31d5e45%3A0x45b6c5e80fcc26c!2sTaman%20Danau%20Kota%2C%20Wangsa%20Maju%2C%2053300%20Kuala%20Lumpur!5e0!3m2!1szh-CN!2smy!4v1710000000000!5m2!1szh-CN!2smy">
+          </iframe>
+        </div>
+        <p class="text-pencil/60 text-sm mt-3 font-body transform rotate-1">
+          <i class="fa-solid fa-location-dot text-accent mr-1"></i>
+          123-1, Jalan 3/23A, Taman Danau Kota, Wangsa Maju, 53000 KL
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     COURSES
+════════════════════════════════════════════ -->
+<div class="section-divider"></div>
+<section id="courses" class="py-20 md:py-32 px-5 md:px-8">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-12 fade-up">
+      <span class="tag mb-4 transform -rotate-1">
+        <i class="fa-solid fa-book-open"></i>
+        Courses
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-hand font-bold text-pencil tracking-tight mt-4 mb-3">
+        <span class="tr" data-zh="全面课程，覆盖各年级" data-ms="Kursus Lengkap" data-en="Comprehensive Courses">全面课程，覆盖各年级</span>
+      </h2>
+      <p class="text-pencil/60 text-base max-w-lg mx-auto font-body"><span class="tr" data-zh="从小学到高中，六大核心科目，为每位学子量身定制学习路径。" data-ms="Dari sekolah rendah hingga menengah, 6 subjek teras." data-en="From primary to secondary, 6 core subjects.">从小学到高中，六大核心科目，为每位学子量身定制学习路径。</span></p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10 fade-up">
+      <button class="tab-btn active wobbly" data-tab="primary">小学 Primary</button>
+      <button class="tab-btn wobbly transform rotate-1" data-tab="secondary">初中 Form 1–3</button>
+      <button class="tab-btn wobbly transform -rotate-1" data-tab="upper">高中 Form 4–5</button>
+    </div>
+
+    <!-- Tab: 小学 -->
+    <div id="tab-primary" class="tab-panel active grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card p-6 wobbly fade-up transform -rotate-1">
+        <div class="pin"></div>
+        <div class="pt-4">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="feature-icon w-12 h-12 transform rotate-2"><i class="fa-solid fa-calculator text-accent"></i></div>
+            <div>
+              <h3 class="text-base font-hand font-bold text-pencil">数学 Mathematics</h3>
+              <span class="text-sm text-pencil/60 font-body px-2 py-0.5 bg-muted inline-block mt-1">Year 1 – 6</span>
+            </div>
+          </div>
+          <p class="text-pencil/70 text-base mb-4 leading-relaxed font-body"><span class="tr" data-zh="夯实数字感与逻辑思维，针对 KSSR 考试题型进行系统训练。" data-ms="Asas logik matematik, latihan sistemik KSSR." data-en="Build numeracy and logical thinking, KSSR exam training.">夯实数字感与逻辑思维，针对 KSSR 考试题型进行系统训练。</span></p>
+          <div class="flex items-center justify-between text-sm text-pencil/60 mb-4 font-body">
+            <span><i class="fa-regular fa-clock mr-1"></i>2h / 课</span>
+            <span><i class="fa-solid fa-users mr-1"></i>≤ 10 人</span>
+          </div>
+          <a href="https://wa.me/60122467900?text=您好，我想了解小学数学课程详情。" target="_blank" rel="noopener" class="btn-secondary block text-center wobbly-sm">
+            <i class="fa-brands fa-whatsapp mr-1"></i> <span class="tr" data-zh="了解详情" data-ms="Ketahui" data-en="Learn More">了解详情</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="card p-6 wobbly fade-up delay-1 transform rotate-1">
+        <div class="pin"></div>
+        <div class="pt-4">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="feature-icon w-12 h-12 bg-accent-blue/10 transform -rotate-1"><i class="fa-solid fa-language text-accent-blue"></i></div>
+            <div>
+              <h3 class="text-base font-hand font-bold text-pencil">英文 English</h3>
+              <span class="text-sm text-pencil/60 font-body px-2 py-0.5 bg-muted inline-block mt-1">Year 1 – 6</span>
+            </div>
+          </div>
+          <p class="text-pencil/70 text-base mb-4 leading-relaxed font-body"><span class="tr" data-zh="听说读写全面提升，培养英语语感，强化写作与阅读能力。" data-ms="Kemahiran menyeluruh: mendengar, bercakap, membaca, menulis." data-en="Comprehensive listening, speaking, reading, writing skills.">听说读写全面提升，培养英语语感，强化写作与阅读能力。</span></p>
+          <div class="flex items-center justify-between text-sm text-pencil/60 mb-4 font-body">
+            <span><i class="fa-regular fa-clock mr-1"></i>2h / 课</span>
+            <span><i class="fa-solid fa-users mr-1"></i>≤ 10 人</span>
+          </div>
+          <a href="https://wa.me/60122467900?text=您好，我想了解小学英文课程详情。" target="_blank" rel="noopener" class="btn-secondary block text-center wobbly-sm">
+            <i class="fa-brands fa-whatsapp mr-1"></i> <span class="tr" data-zh="了解详情" data-ms="Ketahui" data-en="Learn More">了解详情</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="card p-6 wobbly fade-up delay-2 transform -rotate-1">
+        <div class="pin"></div>
+        <div class="pt-4">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="feature-icon w-12 h-12 bg-yellow-100 transform rotate-2"><i class="fa-solid fa-pen-nib text-yellow-600"></i></div>
+            <div>
+              <h3 class="text-base font-hand font-bold text-pencil">华文 Chinese</h3>
+              <span class="text-sm text-pencil/60 font-body px-2 py-0.5 bg-muted inline-block mt-1">Year 1 – 6</span>
+            </div>
+          </div>
+          <p class="text-pencil/70 text-base mb-4 leading-relaxed font-body"><span class="tr" data-zh="汉字书写、阅读理解与作文技巧，结合本地华校课程。" data-ms="Penulisan, pemahaman, kemahiran karangan Bahasa Cina." data-en="Chinese writing, comprehension, essay skills for SJKC.">汉字书写、阅读理解与作文技巧，结合本地华校课程。</span></p>
+          <div class="flex items-center justify-between text-sm text-pencil/60 mb-4 font-body">
+            <span><i class="fa-regular fa-clock mr-1"></i>2h / 课</span>
+            <span><i class="fa-solid fa-users mr-1"></i>≤ 10 人</span>
+          </div>
+          <a href="https://wa.me/60122467900?text=您好，我想了解小学华文课程详情。" target="_blank" rel="noopener" class="btn-secondary block text-center wobbly-sm">
+            <i class="fa-brands fa-whatsapp mr-1"></i> <span class="tr" data-zh="了解详情" data-ms="Ketahui" data-en="Learn More">了解详情</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: 初中 -->
+    <div id="tab-secondary" class="tab-panel grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card p-6 wobbly fade-up transform -rotate-1">
+        <div class="pin"></div>
+        <div class="pt-4">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="feature-icon w-12 h-12 transform rotate-2"><i class="fa-solid fa-calculator text-accent"></i></div>
+            <div>
+              <h3 class="text-base font-hand font-bold text-pencil">数学 Mathematics</h3>
+              <span class="text-sm text-pencil/60 font-body px-2 py-0.5 bg-muted inline-block mt-1">Form 1 – 3</span>
+            </div>
+          </div>
+          <p class="text-pencil/70 text-base mb-4 leading-relaxed font-body"><span class="tr" data-zh="代数、几何、统计一网打尽，针对 PT3 考试题型系统强化。" data-ms="Algebra, geometri, statistik, latihan intensif PT3." data-en="Algebra, geometry, statistics — PT3 exam prep.">代数、几何、统计一网打尽，针对 PT3 考试题型系统强化。</span></p>
+          <div class="flex items-center justify-between text-sm text-pencil/60 mb-4 font-body">
+            <span><i class="fa-regular fa-clock mr-1"></i>2h / 课</span>
+            <span><i class="fa-solid fa-users mr-1"></i>≤ 10 人</span>
+          </div>
+          <a href="https://wa.me/60122467900?text=您好，我想了解初中数学课程详情。" target="_blank" rel="noopener" class="btn-secondary block text-center wobbly-sm"><i class="fa-brands fa-whatsapp mr-1"></i> 了解详情</a>
+        </div>
+      </div>
+
+      <div class="card p-6 wobbly fade-up delay-1 transform rotate-1">
+        <div class="pin"></div>
+        <div class="pt-4">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="feature-icon w-12 h-12 bg-accent-blue/10 transform -rotate-1"><i class="fa-solid fa-flask text-accent-blue"></i></div>
+            <div>
+              <h3 class="text-base font-hand font-bold text-pencil">科学 Science</h3>
+              <span class="text-sm text-pencil/60 font-body px-2 py-0.5 bg-muted inline-block mt-1">Form 1 – 3</span>
+            </div>
+          </div>
+          <p class="text-pencil/70 text-base mb-4 leading-relaxed font-body"><span class="tr" data-zh="物理、化学、生物基础概念，结合实验原理与答题技巧。" data-ms="Fizik, kimia, biologi dengan teknik menjawab." data-en="Physics, chemistry, biology with exam techniques.">物理、化学、生物基础概念，结合实验原理与答题技巧。</span></p>
+          <div class="flex items-center justify-between text-sm text-pencil/60 mb-4 font-body">
+            <span><i class="fa-regular fa-clock mr-1"></i>2h / 课</span>
+            <span><i class="fa-solid fa-users mr-1"></i>≤ 10 人</span>
+          </div>
+          <a href="https://wa.me/60122467900?text=您好，我想了解初中科学课程详情。" target="_blank" rel="noopener" class="btn-secondary block text-center wobbly-sm"><i class="fa-brands fa-whatsapp mr-1"></i> 了解详情</a>
+        </div>
+      </div>
+
+      <div class="card p-6 wobbly fade-up delay-2 transform -rotate-1">
+        <div class="pin"></div>
+        <div class="pt-4">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="feature-icon w-12 h-12 bg-yellow-100 transform rotate-2"><i class="fa-solid fa-scroll text-yellow-600"></i></div>
+            <div>
+              <h3 class="text-base font-hand font-bold text-pencil">历史 Sejarah</h3>
+              <span class="text-sm text-pencil/60 font-body px-2 py-0.5 bg-muted inline-block mt-1">Form 1 – 3</span>
+            </div>
+          </div>
+          <p class="text-pencil/70 text-base mb-4 leading-relaxed font-body"><span class="tr" data-zh="重点章节精讲，时间线梳理，配合记忆术提升 PT3 历史得分。" data-ms="Bab penting, garis masa, teknik ingatan PT3." data-en="Key chapters, timeline, memory techniques for PT3.">重点章节精讲，时间线梳理，配合记忆术提升 PT3 历史得分。</span></p>
+          <div class="flex items-center justify-between text-sm text-pencil/60 mb-4 font-body">
+            <span><i class="fa-regular fa-clock mr-1"></i>2h / 课</span>
+            <span><i class="fa-solid fa-users mr-1"></i>≤ 10 人</span>
+          </div>
+          <a href="https://wa.me/60122467900?text=您好，我想了解初中历史课程详情。" target="_blank" rel="noopener" class="btn-secondary block text-center wobbly-sm"><i class="fa-brands fa-whatsapp mr-1"></i> 了解详情</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: 高中 -->
+    <div id="tab-upper" class="tab-panel grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card p-6 wobbly fade-up transform -rotate-1">
+        <div class="pin"></div>
+        <div class="pt-4">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="feature-icon w-12 h-12 transform rotate-2"><i class="fa-solid fa-calculator text-accent"></i></div>
+            <div>
+              <h3 class="text-base font-hand font-bold text-pencil">额外数学 Add Maths</h3>
+              <span class="text-sm text-pencil/60 font-body px-2 py-0.5 bg-muted inline-block mt-1">Form 4 – 5</span>
+            </div>
+          </div>
+          <p class="text-pencil/70 text-base mb-4 leading-relaxed font-body"><span class="tr" data-zh="微积分、三角函数、向量专项攻克，SPM 核心拿分利器。" data-ms="Kalkulus, trigonometri, vektor — strategi SPM." data-en="Calculus, trigonometry, vectors — essential SPM.">微积分、三角函数、向量专项攻克，SPM 核心拿分利器。</span></p>
+          <div class="flex items-center justify-between text-sm text-pencil/60 mb-4 font-body">
+            <span><i class="fa-regular fa-clock mr-1"></i>2.5h / 课</span>
+            <span><i class="fa-solid fa-users mr-1"></i>≤ 8 人</span>
+          </div>
+          <a href="https://wa.me/60122467900?text=您好，我想了解高中额外数学课程详情。" target="_blank" rel="noopener" class="btn-secondary block text-center wobbly-sm"><i class="fa-brands fa-whatsapp mr-1"></i> 了解详情</a>
+        </div>
+      </div>
+
+      <div class="card p-6 wobbly fade-up delay-1 transform rotate-1">
+        <div class="pin"></div>
+        <div class="pt-4">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="feature-icon w-12 h-12 bg-accent-blue/10 transform -rotate-1"><i class="fa-solid fa-flag text-accent-blue"></i></div>
+            <div>
+              <h3 class="text-base font-hand font-bold text-pencil">马来文 Bahasa Melayu</h3>
+              <span class="text-sm text-pencil/60 font-body px-2 py-0.5 bg-muted inline-block mt-1">Form 4 – 5</span>
+            </div>
+          </div>
+          <p class="text-pencil/70 text-base mb-4 leading-relaxed font-body"><span class="tr" data-zh="作文架构、Rumusan 技巧与理解题拿分策略，助力 SPM A 级。" data-ms="Struktur karangan, rumusan, teknik untuk gred A SPM." data-en="Essay structure, Rumusan, comprehension for SPM A.">作文架构、Rumusan 技巧与理解题拿分策略，助力 SPM A 级。</span></p>
+          <div class="flex items-center justify-between text-sm text-pencil/60 mb-4 font-body">
+            <span><i class="fa-regular fa-clock mr-1"></i>2h / 课</span>
+            <span><i class="fa-solid fa-users mr-1"></i>≤ 10 人</span>
+          </div>
+          <a href="https://wa.me/60122467900?text=您好，我想了解高中马来文课程详情。" target="_blank" rel="noopener" class="btn-secondary block text-center wobbly-sm"><i class="fa-brands fa-whatsapp mr-1"></i> 了解详情</a>
+        </div>
+      </div>
+
+      <div class="card p-6 wobbly fade-up delay-2 transform -rotate-1">
+        <div class="pin"></div>
+        <div class="pt-4">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="feature-icon w-12 h-12 bg-yellow-100 transform rotate-2"><i class="fa-solid fa-language text-yellow-600"></i></div>
+            <div>
+              <h3 class="text-base font-hand font-bold text-pencil">英文 English</h3>
+              <span class="text-sm text-pencil/60 font-body px-2 py-0.5 bg-muted inline-block mt-1">Form 4 – 5</span>
+            </div>
+          </div>
+          <p class="text-pencil/70 text-base mb-4 leading-relaxed font-body"><span class="tr" data-zh="Essay 写作、Literature 精析，SPM 英文纸全面拿分方案。" data-ms="Penulisan esei, analisis sastera, strategi SPM." data-en="Essay writing, Literature analysis, SPM strategy.">Essay 写作、Literature 精析，SPM 英文纸全面拿分方案。</span></p>
+          <div class="flex items-center justify-between text-sm text-pencil/60 mb-4 font-body">
+            <span><i class="fa-regular fa-clock mr-1"></i>2h / 课</span>
+            <span><i class="fa-solid fa-users mr-1"></i>≤ 10 人</span>
+          </div>
+          <a href="https://wa.me/60122467900?text=您好，我想了解高中英文课程详情。" target="_blank" rel="noopener" class="btn-secondary block text-center wobbly-sm"><i class="fa-brands fa-whatsapp mr-1"></i> 了解详情</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════════ -->
+<div class="section-divider"></div>
+<section id="reviews" class="py-20 md:py-32 px-5 md:px-8">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-12 fade-up">
+      <span class="tag mb-4 transform rotate-1">
+        <i class="fa-solid fa-quote-left"></i>
+        Reviews
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-hand font-bold text-pencil tracking-tight mt-4 mb-4">
+        <span class="tr" data-zh="家长的真实心声" data-ms="Suara Ibu Bapa" data-en="Real Voices from Parents">家长的真实心声</span>
+      </h2>
+      <div class="flex items-center justify-center gap-3">
+        <span class="text-4xl font-hand font-bold text-pencil">4.8</span>
+        <div class="text-left">
+          <div class="flex gap-0.5 star-gold text-lg"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+          <div class="text-pencil/60 text-sm mt-0.5 font-body"><span class="tr" data-zh="79 条 Google 评价" data-ms="79 Ulasan Google" data-en="79 Google Reviews">79 条 Google 评价</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="speech-bubble wobbly fade-up transform -rotate-1">
+        <div class="flex gap-0.5 star-gold text-sm mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="text-pencil/80 text-base leading-relaxed mb-5 font-body">"女儿在这里上了一年的数学和英文，成绩从 C 提升到了 A。老师非常有耐心，每次上课前还会发提醒。真心推荐！"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 border-2 border-pencil bg-accent/10 flex items-center justify-center text-accent font-hand font-bold transform rotate-3">王</div>
+          <div>
+            <div class="text-pencil font-hand font-bold">王太太</div>
+            <div class="text-pencil/60 text-sm font-body"><span class="tr" data-zh="小学生家长 · 2024" data-ms="Ibu Bapa · 2024" data-en="Parent · 2024">小学生家长 · 2024</span></div>
+          </div>
+          <div class="ml-auto"><i class="fa-brands fa-google text-pencil/40 text-xl"></i></div>
+        </div>
+      </div>
+
+      <div class="speech-bubble wobbly fade-up delay-1 transform rotate-1">
+        <div class="flex gap-0.5 star-gold text-sm mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="text-pencil/80 text-base leading-relaxed mb-5 font-body">"My son struggled with Add Maths for months. After joining ChengYi, his confidence improved drastically and he scored A- in his trials. The teachers here genuinely care!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 border-2 border-pencil bg-muted flex items-center justify-center text-pencil font-hand font-bold transform -rotate-2">L</div>
+          <div>
+            <div class="text-pencil font-hand font-bold">Lim Pei Ling</div>
+            <div class="text-pencil/60 text-sm font-body">Form 5 Parent · 2024</div>
+          </div>
+          <div class="ml-auto"><i class="fa-brands fa-google text-pencil/40 text-xl"></i></div>
+        </div>
+      </div>
+
+      <div class="speech-bubble wobbly fade-up delay-2 transform -rotate-1">
+        <div class="flex gap-0.5 star-gold text-sm mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="text-pencil/80 text-base leading-relaxed mb-5 font-body">"环境整洁，老师专业负责，儿子每次都很期待去上课。PT3 考试成绩出乎意料地好，华文拿了 A，非常感谢！"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 border-2 border-pencil bg-accent/10 flex items-center justify-center text-accent font-hand font-bold transform rotate-2">张</div>
+          <div>
+            <div class="text-pencil font-hand font-bold">张先生</div>
+            <div class="text-pencil/60 text-sm font-body"><span class="tr" data-zh="初中生家长 · 2023" data-ms="Ibu Bapa · 2023" data-en="Parent · 2023">初中生家长 · 2023</span></div>
+          </div>
+          <div class="ml-auto"><i class="fa-brands fa-google text-pencil/40 text-xl"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center fade-up">
+      <a href="https://www.google.com/maps/search/ChengYi+Wangsa+Tuition" target="_blank" rel="noopener" class="btn-ghost inline-flex items-center gap-2 wobbly">
+        <i class="fa-brands fa-google"></i>
+        <span class="tr" data-zh="查看全部 Google 评价" data-ms="Lihat Semua Ulasan" data-en="View All Reviews">查看全部 Google 评价</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════ -->
+<div class="section-divider"></div>
+<section id="contact" class="py-20 md:py-32 px-5 md:px-8">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-12 fade-up">
+      <span class="tag mb-4 transform -rotate-2">
+        <i class="fa-solid fa-headset"></i>
+        Contact
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-hand font-bold text-pencil tracking-tight mt-4 mb-3">
+        <span class="tr" data-zh="随时欢迎您来咨询" data-ms="Kami Sedia Membantu" data-en="We're Here to Help">随时欢迎您来咨询</span>
+      </h2>
+      <p class="text-pencil/60 text-base max-w-lg mx-auto font-body"><span class="tr" data-zh="我们的招生团队将在工作日 24 小时内回复您的留言。" data-ms="Pasukan pendaftaran akan membalas dalam 24 jam." data-en="Our team will respond within 24 hours.">我们的招生团队将在工作日 24 小时内回复您的留言。</span></p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 items-start">
+
+      <!-- Info -->
+      <div class="flex flex-col gap-4 fade-up">
+        <div class="card p-6 wobbly flex items-start gap-4 transform -rotate-1">
+          <div class="feature-icon w-12 h-12 flex-shrink-0 transform rotate-2"><i class="fa-solid fa-location-dot text-accent text-lg"></i></div>
+          <div>
+            <h4 class="text-base font-hand font-bold text-pencil mb-1"><span class="tr" data-zh="地址" data-ms="Alamat" data-en="Address">地址</span></h4>
+            <p class="text-pencil/70 text-base leading-relaxed font-body">123-1, Jalan 3/23A, Taman Danau Kota, Wangsa Maju, 53000 KL</p>
+            <a href="https://maps.google.com/?q=Taman+Danau+Kota+Wangsa+Maju+KL" target="_blank" rel="noopener" class="text-accent font-hand font-bold text-sm mt-2 inline-flex items-center gap-1 hover:underline">
+              <i class="fa-solid fa-diamond-turn-right"></i> <span class="tr" data-zh="查看地图" data-ms="Lihat Peta" data-en="View Map">查看地图</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card p-6 wobbly flex items-start gap-4 transform rotate-1">
+          <div class="feature-icon w-12 h-12 flex-shrink-0 bg-accent-blue/10 transform -rotate-1"><i class="fa-solid fa-phone text-accent-blue text-lg"></i></div>
+          <div>
+            <h4 class="text-base font-hand font-bold text-pencil mb-1"><span class="tr" data-zh="电话 / WhatsApp" data-ms="Telefon" data-en="Phone / WhatsApp">电话 / WhatsApp</span></h4>
+            <a href="tel:+60122467900" class="text-pencil/70 text-base hover:text-accent transition-colors font-body">+60 12-246 7900</a>
+            <br />
+            <a href="https://wa.me/60122467900" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 mt-2 text-sm font-hand font-bold px-4 py-2 bg-green-100 border-2 border-pencil shadow-sketch transform -rotate-1 hover:rotate-0 transition-transform" style="color: #25D366;">
+              <i class="fa-brands fa-whatsapp"></i> <span class="tr" data-zh="发送 WhatsApp" data-ms="WhatsApp Kami" data-en="Send WhatsApp">发送 WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card p-6 wobbly flex items-start gap-4 transform -rotate-1">
+          <div class="feature-icon w-12 h-12 flex-shrink-0 transform rotate-2"><i class="fa-regular fa-clock text-accent text-lg"></i></div>
+          <div>
+            <h4 class="text-base font-hand font-bold text-pencil mb-1"><span class="tr" data-zh="营业时间" data-ms="Waktu Operasi" data-en="Hours">营业时间</span></h4>
+            <p class="text-pencil/70 text-base font-body"><span class="tr" data-zh="每天开放 Daily" data-ms="Buka Setiap Hari" data-en="Open Daily">每天开放 Daily</span></p>
+            <p class="text-pencil font-hand font-bold text-lg">10:30 AM 起</p>
+            <p class="text-pencil/60 text-sm mt-0.5 font-body"><span class="tr" data-zh="（请提前预约课程时间）" data-ms="（Sila tempoh terlebih dahulu）" data-en="(Please book in advance)">（请提前预约课程时间）</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="card p-7 wobbly-lg fade-up delay-2 transform rotate-1">
+        <div class="tape"></div>
+        <div class="pt-4">
+          <h3 class="text-lg font-hand font-bold text-pencil mb-5"><span class="tr" data-zh="发送留言" data-ms="Hantar Mesej" data-en="Send Message">发送留言</span></h3>
+          <form id="contact-form" onsubmit="handleSubmit(event)" class="flex flex-col gap-4">
+            <div>
+              <label class="text-sm font-hand font-bold text-pencil/70 block mb-1.5"><span class="tr" data-zh="姓名" data-ms="Nama" data-en="Name">姓名</span> <span class="text-accent">*</span></label>
+              <input type="text" required class="form-input wobbly-sm" />
+            </div>
+            <div>
+              <label class="text-sm font-hand font-bold text-pencil/70 block mb-1.5"><span class="tr" data-zh="电话 / WhatsApp" data-ms="Telefon" data-en="Phone">电话 / WhatsApp</span> <span class="text-accent">*</span></label>
+              <input type="tel" required placeholder="+60 12-XXX XXXX" class="form-input wobbly-sm" />
+            </div>
+            <div>
+              <label class="text-sm font-hand font-bold text-pencil/70 block mb-1.5"><span class="tr" data-zh="咨询内容" data-ms="Pertanyaan" data-en="Message">咨询内容</span></label>
+              <textarea rows="4" class="form-input resize-none wobbly"></textarea>
+            </div>
+            <button type="submit" class="btn-primary py-3 px-6 wobbly">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span class="tr" data-zh="发送留言" data-ms="Hantar" data-en="Send">发送留言</span>
+            </button>
+          </form>
+          <div id="form-success" class="hidden mt-4 p-4 wobbly-sm text-center bg-green-100 border-2 border-green-500">
+            <i class="fa-solid fa-circle-check text-green-600 mr-1"></i>
+            <span class="text-green-700 font-body"><span class="tr" data-zh="留言已发送！我们会尽快与您联系。" data-ms="Mesej dihantar! Kami akan hubungi anda." data-en="Message sent! We will contact you shortly.">留言已发送！我们会尽快与您联系。</span></span>
+          </div>
+          <p class="text-pencil/50 text-sm mt-4 text-center font-body">
+            <span class="tr" data-zh="或直接" data-ms="Atau" data-en="Or">或直接</span> <a href="https://wa.me/60122467900" target="_blank" rel="noopener" class="font-hand font-bold text-green-600 hover:underline"><span class="tr" data-zh="WhatsApp 我们" data-ms="WhatsApp kami" data-en="WhatsApp us">WhatsApp 我们</span></a>，通常 1 小时内回复。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<div class="section-divider"></div>
+<footer class="py-12 px-5 md:px-8">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+
+      <!-- Brand -->
+      <div class="sm:col-span-2 md:col-span-1">
+        <a href="#home" class="flex items-center gap-3 mb-4 transform -rotate-1">
+          <div class="w-10 h-10 bg-white border-2 border-pencil shadow-sketch flex items-center justify-center overflow-hidden wobbly-sm">
+            <img src="logo.png" alt="诚意教育" class="w-8 h-8 object-contain" />
+          </div>
+          <span class="text-pencil font-hand font-bold">诚意补习学院</span>
+        </a>
+        <p class="text-pencil/60 text-sm leading-relaxed mb-4 font-body">诚意育人，精益求精<br />Sincere Education, Excellence</p>
+        <div class="flex gap-2">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="w-10 h-10 border-2 border-pencil bg-white flex items-center justify-center text-pencil hover:text-accent hover:bg-accent/5 transition-colors shadow-sketch transform hover:-rotate-6"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="w-10 h-10 border-2 border-pencil bg-white flex items-center justify-center text-pencil hover:text-accent hover:bg-accent/5 transition-colors shadow-sketch transform hover:rotate-6"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/60122467900" target="_blank" rel="noopener" class="w-10 h-10 border-2 border-pencil bg-white flex items-center justify-center text-pencil hover:text-green-600 hover:bg-green-50 transition-colors shadow-sketch transform hover:-rotate-3"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h5 class="text-pencil font-hand font-bold text-sm mb-4 uppercase tracking-wide"><span class="tr" data-zh="导航" data-ms="Pautan" data-en="Links">导航</span></h5>
+        <ul class="flex flex-col gap-2">
+          <li><a href="#home"    class="text-pencil/70 text-base hover:text-accent transition-colors font-body"><span class="tr" data-zh="首页" data-ms="Utama" data-en="Home">首页</span></a></li>
+          <li><a href="#about"   class="text-pencil/70 text-base hover:text-accent transition-colors font-body"><span class="tr" data-zh="关于我们" data-ms="Tentang" data-en="About">关于我们</span></a></li>
+          <li><a href="#courses" class="text-pencil/70 text-base hover:text-accent transition-colors font-body"><span class="tr" data-zh="课程" data-ms="Kursus" data-en="Courses">课程</span></a></li>
+          <li><a href="#reviews" class="text-pencil/70 text-base hover:text-accent transition-colors font-body"><span class="tr" data-zh="评价" data-ms="Ulasan" data-en="Reviews">评价</span></a></li>
+          <li><a href="#contact" class="text-pencil/70 text-base hover:text-accent transition-colors font-body"><span class="tr" data-zh="联系我们" data-ms="Hubungi" data-en="Contact">联系我们</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h5 class="text-pencil font-hand font-bold text-sm mb-4 uppercase tracking-wide"><span class="tr" data-zh="联系" data-ms="Hubungi" data-en="Contact">联系</span></h5>
+        <ul class="flex flex-col gap-2.5 text-pencil/70 text-base font-body">
+          <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-accent mt-1 flex-shrink-0"></i><span>123-1, Jalan 3/23A, Wangsa Maju, 53000 KL</span></li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-accent flex-shrink-0"></i><a href="tel:+60122467900" class="hover:text-accent transition-colors">+60 12-246 7900</a></li>
+          <li class="flex items-center gap-2"><i class="fa-regular fa-clock text-accent flex-shrink-0"></i><span><span class="tr" data-zh="每天 10:30 AM 开放" data-ms="10:30 AM Setiap Hari" data-en="10:30 AM Daily">每天 10:30 AM 开放</span></span></li>
+          <li class="flex items-center gap-2"><i class="fa-brands fa-google text-accent flex-shrink-0"></i><span>4.8 ★ · 79 条评价</span></li>
+        </ul>
+      </div>
+
+      <!-- Hours -->
+      <div>
+        <h5 class="text-pencil font-hand font-bold text-sm mb-4 uppercase tracking-wide"><span class="tr" data-zh="营业时间" data-ms="Waktu" data-en="Hours">营业时间</span></h5>
+        <div class="text-pencil/70 text-base space-y-1.5 font-body">
+          <div class="flex justify-between"><span><span class="tr" data-zh="周一 – 周五" data-ms="Isnin – Jumaat" data-en="Mon – Fri">周一 – 周五</span></span><span class="text-pencil/50">10:30 AM – 9:00 PM</span></div>
+          <div class="flex justify-between"><span><span class="tr" data-zh="周六" data-ms="Sabtu" data-en="Sat">周六</span></span><span class="text-pencil/50">9:00 AM – 5:00 PM</span></div>
+          <div class="flex justify-between"><span><span class="tr" data-zh="周日" data-ms="Ahad" data-en="Sun">周日</span></span><span class="text-pencil/50"><span class="tr" data-zh="休息" data-ms="Tutup" data-en="Closed">休息</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-10 pt-6 text-center border-t-2 border-dashed border-pencil/20">
+      <p class="text-pencil/50 text-sm font-body">
+        © 2024 诚意补习学院 · ChengYi Wangsa. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════
+     WHATSAPP FLOAT
+════════════════════════════════════════════ -->
+<a id="wa-float" href="https://wa.me/60122467900?text=您好！我想了解诚意补习学院的课程信息。" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
+</a>
+
+  </div><!-- end content-layer -->
+
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+<script>
+  /* ── Navbar scroll ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  /* ── Hamburger ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamIcon = document.getElementById('ham-icon');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    hamIcon.className = mobileMenu.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+  });
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+    hamIcon.className = 'fa-solid fa-bars';
+  }
+
+  /* ── Course tabs ── */
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      tabPanels.forEach(p => {
+        const isTarget = p.id === 'tab-' + target;
+        p.classList.toggle('active', isTarget);
+        if (isTarget) {
+          p.querySelectorAll('.fade-up').forEach(el => {
+            el.classList.remove('visible');
+            void el.offsetWidth;
+            el.classList.add('visible');
+          });
+        }
+      });
+    });
+  });
+
+  /* ── Scroll fade-up ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15, once: true });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  /* ── Hero form submit → WhatsApp ── */
+  function handleHeroSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('hero-form');
+    const name = form.querySelector('input[type="text"]')?.value || '';
+    const grade = document.getElementById('hero-grade')?.value || '';
+    const phone = form.querySelector('input[type="tel"]')?.value || '';
+    const text = encodeURIComponent(`您好！我来自诚意补习学院官网，想预约免费试听课。\n姓名：${name}\n年级：${grade}\n电话：${phone}`);
+    window.open(`https://wa.me/60122467900?text=${text}`, '_blank');
+    form.reset();
+  }
+
+  /* ── Contact form ── */
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    const name = form.querySelector('input[type="text"]')?.value || '';
+    const phone = form.querySelector('input[type="tel"]')?.value || '';
+    const msg = form.querySelector('textarea')?.value || '';
+    const text = encodeURIComponent(`您好！我来自诚意补习学院官网。\n姓名：${name}\n电话：${phone}\n咨询内容：${msg}`);
+    window.open(`https://wa.me/60122467900?text=${text}`, '_blank');
+    form.reset();
+    success.classList.remove('hidden');
+    setTimeout(() => success.classList.add('hidden'), 5000);
+  }
+
+  /* ── Active nav link ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sectionObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active-link', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  sections.forEach(s => sectionObs.observe(s));
+
+  /* ── Language switcher ── */
+  let currentLang = 'zh';
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      if (lang === currentLang) return;
+      currentLang = lang;
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.tr').forEach(el => {
+        const text = el.getAttribute('data-' + lang);
+        if (text) el.textContent = text;
+      });
+      localStorage.setItem('chengyi-lang', lang);
+    });
+  });
+
+  const savedLang = localStorage.getItem('chengyi-lang');
+  if (savedLang && savedLang !== 'zh') {
+    const btn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
+    if (btn) btn.click();
+  }
+</script>
+
+</body>
+</html>
