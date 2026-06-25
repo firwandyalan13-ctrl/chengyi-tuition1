@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>诚意补习学院 · Setapak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Patrick+Hand&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper:      '#fdfbf7',
+            'paper-dark': '#f5f0e8',
+            pencil:     '#2d2d2d',
+            muted:      '#e5e0d8',
+            accent:     '#ff4d4d',
+            'accent-blue': '#2d5da1',
+            'sticky-yellow': '#fff9c4',
+          },
+          fontFamily: {
+            hand: ['Kalam', 'cursive'],
+            body: ['Patrick Hand', 'cursive'],
+            sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Patrick Hand', 'Noto Sans SC', cursive;
+      background: #fdfbf7;
+      color: #2d2d2d;
+    }
+    .paper-bg {
+      position: fixed; inset: 0; z-index: 0;
+      background-color: #fdfbf7;
+      background-image: radial-gradient(#e5e0d8 1px, transparent 1px), radial-gradient(#e5e0d8 1px, transparent 1px);
+      background-size: 24px 24px, 48px 48px;
+      background-position: 0 0, 12px 12px;
+      pointer-events: none;
+    }
+    .content { position: relative; z-index: 10; min-height: 100vh; }
+    .wobbly-lg { border-radius: 60px 400px 60px 400px / 400px 60px 400px 60px; }
+    .wobbly-sm { border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; }
+    .shadow-sketch { box-shadow: 4px 4px 0px 0px #2d2d2d; }
+    .shadow-sketch-lg { box-shadow: 6px 6px 0px 0px #2d2d2d; }
+    .card {
+      background: #ffffff; border: 3px solid #2d2d2d;
+      box-shadow: 4px 4px 0px 0px rgba(45,45,45,0.15);
+    }
+    .map-container {
+      width: 100%; height: 320px;
+      border: 4px solid #2d2d2d;
+      overflow: hidden;
+    }
+    .map-container iframe {
+      width: 100%; height: 100%; border: 0;
+    }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #ffffff; color: #2d2d2d; font-weight: 700;
+      font-size: 16px; border: 3px solid #2d2d2d;
+      padding: 10px 20px; cursor: pointer;
+      box-shadow: 3px 3px 0px 0px #2d2d2d;
+      text-decoration: none; font-family: 'Patrick Hand', cursive;
+      transition: all 0.15s;
+    }
+    .back-btn:hover {
+      background: #ff4d4d; color: #ffffff;
+      box-shadow: 1px 1px 0px 0px #2d2d2d;
+      transform: translate(2px, 2px);
+    }
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; font-size: 14px; font-weight: 700;
+      border: 2px solid #2d2d2d; background: #fff9c4;
+      box-shadow: 2px 2px 0px 0px #2d2d2d;
+      font-family: 'Patrick Hand', cursive;
+    }
+  </style>
+</head>
+<body>
+  <div class="paper-bg"></div>
+  <div class="content">
+    <div class="p-5 md:p-8 max-w-5xl mx-auto">
+      <a href="index.html" class="back-btn wobbly-lg">
+        <i class="fa-solid fa-arrow-left"></i> 返回首页
+      </a>
+    </div>
+
+    <div class="px-5 md:px-8 max-w-5xl mx-auto pb-16">
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+
+        <div class="card p-3 wobbly-lg shadow-sketch-lg transform rotate-0.5">
+          <div class="map-container wobbly-lg">
+            <iframe src="https://maps.google.com/maps?q=Jalan+1/23f+Taman+Teratai+Mewah+53100+Kuala+Lumpur&output=embed" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div>
+          <div class="card p-6 wobbly-lg shadow-sketch transform -rotate-0.5 mb-6">
+            <h1 class="font-hand font-bold text-2xl md:text-3xl text-pencil mb-3"><i class="fa-solid fa-school text-accent"></i> Setapak</h1>
+            <p class="font-body text-pencil/70 mb-1"><i class="fa-solid fa-location-dot text-accent"></i> Jalan 1/23f, Taman Teratai Mewah, 53100 Kuala Lumpur</p>
+            <p class="font-body text-pencil/70 mb-1"><i class="fa-solid fa-phone text-accent"></i> <a href="tel:0173663800" class="hover:text-accent">017-3663800</a></p>
+            <div class="mt-4">
+              <a href="https://wa.me/60173663800?text=您好！我想了解诚意补习学院Setapak的课程信息。" target="_blank" class="inline-flex items-center gap-2 bg-green-500 text-white font-hand font-bold px-6 py-3 shadow-sketch hover:shadow-sketch-hover transition-all wobbly-sm" style="border:3px solid #2d2d2d;text-decoration:none;">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp 咨询
+              </a>
+            </div>
+          </div>
+
+          <div class="card p-6 wobbly-lg shadow-sketch transform rotate-0.5">
+            <span class="tag wobbly-sm mb-4 inline-flex"><i class="fa-solid fa-book-open text-accent"></i> <span class="tr" data-zh="课程" data-ms="Kursus" data-en="Courses">课程</span></span>
+            <p class="font-body text-pencil/70 mb-5 leading-relaxed">
+              <span class="tr" data-zh="三校提供相同课程体系，涵盖小学至中学及安亲班。完整科目请见课程页。" data-ms="Tiga cawangan menawarkan kursus yang sama." data-en="All branches share the same curriculum. See courses page for details.">三校提供相同课程体系，涵盖小学至中学及安亲班。完整科目请见课程页。</span>
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <a href="courses.html" class="btn-primary wobbly-sm transform -rotate-1"><i class="fa-solid fa-book-open"></i> <span class="tr" data-zh="查看完整课程" data-ms="Lihat Kursus" data-en="View Courses">查看完整课程</span></a>
+              <a href="contact.html" class="btn-secondary wobbly-sm transform rotate-1"><i class="fa-solid fa-calendar-check"></i> <span class="tr" data-zh="预约试听" data-ms="Tempoh" data-en="Book Trial">预约试听</span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

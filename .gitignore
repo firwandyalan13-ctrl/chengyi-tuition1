@@ -1,0 +1,19 @@
+# WorkBuddy internal files
+.workbuddy/
+
+# Local backup / dev artifacts
+诚意补习中心/
+logo_b64.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log

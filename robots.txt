@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chengyi-education.com/sitemap.xml
