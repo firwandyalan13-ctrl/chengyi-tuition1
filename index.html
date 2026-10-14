@@ -1,321 +1,67 @@
-<!DOCTYPE html>
-<html lang="zh-Hans" dir="ltr">
-<head>
-  <meta charset="UTF-8" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S00FG8N2L4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-S00FG8N2L4');
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>诚意补习学院 ChengYi · 吉隆坡 Wangsa Maju | 中小学补习</title>
-  <meta name="description" content="诚意补习学院 ChengYi — 吉隆坡 Wangsa Maju 首选中小学补习中心，三校联动（Mentakab/Setapak/Wangsa），Google 4.8⭐，KSSR/KSSM 专业辅导。立即预约免费试听！" />
-  <meta name="keywords" content="补习中心, tuition centre, KL, Wangsa Maju, Setapak, Mentakab, 小学补习, 初中补习, SPM, PT3, KSSR, KSSM, Add Maths, 华文, 英文, 马来文, 数学, 科学" />
-  <meta name="author" content="ChengYi Tuition Academy" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://chengyi-education.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="诚意补习学院 ChengYi · 吉隆坡 Wangsa Maju | 中小学补习" />
-  <meta property="og:description" content="三校联动，Google 4.8⭐，专注 KSSR/KSSM 专业辅导。免费试听课预约中！" />
-  <meta property="og:image" content="https://chengyi-education.com/logo.png" />
-  <meta property="og:url" content="https://chengyi-education.com/" />
-  <meta property="og:site_name" content="诚意补习学院 ChengYi" />
-  <meta property="og:locale" content="zh_Hans" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="诚意补习学院 ChengYi | 中小学补习" />
-  <meta name="twitter:description" content="三校联动，Google 4.8⭐，KSSR/KSSM 专业辅导。" />
-
-  <!-- Favicon & Theme -->
-  <link rel="icon" type="image/png" href="logo.png" />
-  <meta name="theme-color" content="#fdfbf7" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-
-  <!-- Google Fonts - Handwritten Style (display=swap for FOIT prevention) -->
-  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Patrick+Hand&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Patrick+Hand&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" /></noscript>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            paper:      '#fdfbf7',
-            'paper-dark': '#f5f0e8',
-            pencil:     '#2d2d2d',
-            muted:      '#e5e0d8',
-            accent:     '#ff4d4d',
-            'accent-blue': '#2d5da1',
-            'sticky-yellow': '#fff9c4',
-          },
-          fontFamily: {
-            hand: ['Kalam', 'cursive'],
-            body: ['Patrick Hand', 'cursive'],
-            sans: ['"Noto Sans SC"', 'system-ui', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
-
-  
-  <link rel="stylesheet" href="styles.css" />
-
-</head>
-<body>
-  <div class="paper-bg"></div>
-  <div class="content-layer">
-
-<!-- ═══════════════════════════════════════════
-     NAVBAR（四页共用）
-════════════════════════════════════════════ -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent">
-  <div class="max-w-5xl mx-auto flex items-center justify-between h-16 px-5 md:px-8">
-
-    <!-- Logo -->
-    <a href="index.html" class="flex items-center gap-3 select-none transform -rotate-1">
-      <div class="w-12 h-12 bg-white border-[3px] border-pencil shadow-sketch flex items-center justify-center overflow-hidden wobbly-sm">
-        <img src="logo.png" alt="诚意教育" class="w-10 h-10 object-contain" />
-      </div>
-      <span class="text-pencil font-hand font-bold text-lg hidden sm:block">诚意补习学院</span>
-    </a>
-
-    <!-- Nav links (desktop) -->
-    <ul class="hidden md:flex items-center gap-2">
-      <li><a href="index.html"   class="nav-link transform rotate-1" data-nav="home"><span class="tr" data-zh="首页" data-ms="Utama" data-en="Home">首页</span></a></li>
-      <li><a href="about.html"   class="nav-link transform -rotate-1" data-nav="about"><span class="tr" data-zh="关于" data-ms="Tentang" data-en="About">关于</span></a></li>
-      <li><a href="courses.html" class="nav-link transform rotate-1" data-nav="courses"><span class="tr" data-zh="课程" data-ms="Kursus" data-en="Courses">课程</span></a></li>
-      <li><a href="contact.html" class="nav-link transform -rotate-1" data-nav="contact"><span class="tr" data-zh="联系" data-ms="Hubungi" data-en="Contact">联系</span></a></li>
-    </ul>
-
-    <!-- Right actions -->
-    <div class="flex items-center gap-2">
-      <div class="flex items-center gap-1 mr-2">
-        <button data-lang="zh" class="lang-btn active">中</button>
-        <button data-lang="ms" class="lang-btn transform rotate-2">MS</button>
-        <button data-lang="en" class="lang-btn transform -rotate-1">EN</button>
-      </div>
-      <button onclick="showBranchModal()" class="btn-primary hidden md:inline-flex text-base py-2 px-5 transform -rotate-1 cursor-pointer">
-        <i class="fa-solid fa-calendar-check"></i>
-        <span class="tr" data-zh="立即预约" data-ms="Tempoh Sekarang" data-en="Book Now">立即预约</span>
-      </button>
-      <button id="hamburger" class="md:hidden text-pencil text-xl p-2 border-2 border-pencil bg-white shadow-sketch" aria-label="菜单">
-        <i class="fa-solid fa-bars" id="ham-icon"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden bg-paper border-b-3 border-pencil shadow-lg">
-    <ul class="flex flex-col px-6 py-4 gap-3 text-lg font-body">
-      <li><a href="index.html"   class="block py-2 text-pencil hover:text-accent transition-colors" onclick="closeMobile()"><span class="tr" data-zh="首页" data-ms="Utama" data-en="Home">首页</span></a></li>
-      <li><a href="about.html"   class="block py-2 text-pencil hover:text-accent transition-colors" onclick="closeMobile()"><span class="tr" data-zh="关于我们" data-ms="Tentang Kami" data-en="About Us">关于我们</span></a></li>
-      <li><a href="courses.html" class="block py-2 text-pencil hover:text-accent transition-colors" onclick="closeMobile()"><span class="tr" data-zh="课程" data-ms="Kursus" data-en="Courses">课程</span></a></li>
-      <li><a href="contact.html" class="block py-2 text-pencil hover:text-accent transition-colors" onclick="closeMobile()"><span class="tr" data-zh="联系我们" data-ms="Hubungi Kami" data-en="Contact">联系我们</span></a></li>
-      <li class="pt-2"><button onclick="closeMobile(); showBranchModal();" class="btn-primary inline-flex items-center gap-2 w-full justify-center cursor-pointer" style="font-family:'Patrick Hand',cursive;"><i class="fa-solid fa-calendar-check"></i> <span class="tr" data-zh="立即预约" data-ms="Tempoh Sekarang" data-en="Book Now">立即预约</span></button></li>
-    </ul>
-  </div>
-</nav>
-
-
-<!-- ═══════════════════════════════════════════
-     HERO BANNER
-════════════════════════════════════════════ -->
-<section id="home" class="relative pt-20 pb-20 md:pt-28 md:pb-28 overflow-hidden">
-  <div class="relative z-10 max-w-5xl mx-auto px-5 md:px-8">
-
-    <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-      
-      <!-- Left: Logo -->
-      <div class="flex flex-col items-center md:items-end">
-        <div class="hero-entrance d1 relative inline-block transform -rotate-1 group">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-28 h-8 bg-pencil/20 transform -rotate-6 z-10 transition-transform duration-300 group-hover:rotate-3"></div>
-          <div class="bg-white border-[4px] border-pencil shadow-sketch-xl p-7 md:p-10 wobbly-lg transition-all duration-300 group-hover:shadow-[8px_8px_0px_0px_#2d2d2d] group-hover:-translate-y-1">
-            <img src="logo.png" alt="诚意教育" class="w-56 h-56 md:w-72 md:h-72 object-contain" loading="eager" width="288" height="288" />
-          </div>
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-accent border-[3px] border-pencil shadow-sm z-20 transition-transform duration-300 group-hover:scale-110"></div>
-        </div>
-        <h1 class="text-center font-hand font-bold text-lg md:text-xl text-pencil mt-5 md:mt-6 max-w-sm leading-snug transform -rotate-1">
-          <span class="tr" data-zh="吉隆坡 Wangsa Maju 中小学补习 · 诚意补习学院" data-ms="Tuisyen Sekolah Rendah &amp; Menengah Wangsa Maju KL · ChengYi" data-en="Wangsa Maju KL Primary &amp; Secondary Tuition · ChengYi Academy">吉隆坡 Wangsa Maju 中小学补习 · 诚意补习学院</span>
-        </h1>
-      </div>
-
-      <!-- Right: Branch Cards -->
-      <div class="space-y-5">
-
-        <div class="fade-up">
-          <div onclick="window.location.href='mentakab.html'" class="card p-4 relative transform -rotate-1 cursor-pointer w-full group hover:-translate-y-1 transition-all">
-            <div class="tape z-10"></div>
-            <div class="pin z-10"></div>
-            <div class="flex items-center gap-4">
-              <img src="mentakab.jpg" alt="Mentakab" class="w-20 h-20 object-cover border-2 border-pencil wobbly-sm flex-shrink-0" loading="lazy" />
-              <div class="flex-1 min-w-0">
-                <h3 class="font-hand font-bold text-xl text-pencil">Mentakab</h3>
-                <p class="font-body text-pencil/60 text-xs truncate">61-1, Jalan Temerloh, Mentakab</p>
-                <p class="font-body text-green-600 text-sm mt-0.5"><i class="fa-brands fa-whatsapp"></i> 017-7717900</p>
-              </div>
-              <i class="fa-solid fa-chevron-right text-pencil/40 text-lg"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="fade-up delay-1">
-          <div onclick="window.location.href='setapak.html'" class="card p-4 relative transform rotate-1 cursor-pointer w-full group hover:-translate-y-1 transition-all">
-            <div class="tape z-10"></div>
-            <div class="pin z-10"></div>
-            <div class="flex items-center gap-4">
-              <img src="setapak.jpg" alt="Setapak" class="w-20 h-20 object-cover border-2 border-pencil wobbly-sm flex-shrink-0" loading="lazy" />
-              <div class="flex-1 min-w-0">
-                <h3 class="font-hand font-bold text-xl text-pencil">Setapak</h3>
-                <p class="font-body text-pencil/60 text-xs truncate">Jalan 1/23f, Taman Teratai Mewah, KL</p>
-                <p class="font-body text-green-600 text-sm mt-0.5"><i class="fa-brands fa-whatsapp"></i> 017-3663800</p>
-              </div>
-              <i class="fa-solid fa-chevron-right text-pencil/40 text-lg"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="fade-up delay-2">
-          <div onclick="window.location.href='wangsa.html'" class="card p-4 relative transform -rotate-1 cursor-pointer w-full group hover:-translate-y-1 transition-all">
-            <div class="tape z-10"></div>
-            <div class="pin z-10"></div>
-            <div class="flex items-center gap-4">
-              <img src="wangsa.jpg" alt="Wangsa" class="w-20 h-20 object-cover border-2 border-pencil wobbly-sm flex-shrink-0" loading="lazy" />
-              <div class="flex-1 min-w-0">
-                <h3 class="font-hand font-bold text-xl text-pencil">Wangsa</h3>
-                <p class="font-body text-pencil/60 text-xs truncate">123-1, Jalan 3/23A, Wangsa Maju, KL</p>
-                <p class="font-body text-green-600 text-sm mt-0.5"><i class="fa-brands fa-whatsapp"></i> 012-2467900</p>
-              </div>
-              <i class="fa-solid fa-chevron-right text-pencil/40 text-lg"></i>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════
-     FOOTER（四页共用）
-════════════════════════════════════════════ -->
-<div class="section-divider"></div>
-<footer class="py-12 px-5 md:px-8">
-  <div class="max-w-5xl mx-auto">
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
-
-      <!-- Brand -->
-      <div class="sm:col-span-2 md:col-span-1">
-        <a href="index.html" class="flex items-center gap-3 mb-4 transform -rotate-1">
-          <div class="w-10 h-10 bg-white border-2 border-pencil shadow-sketch flex items-center justify-center overflow-hidden wobbly-sm">
-            <img src="logo.png" alt="诚意教育" class="w-8 h-8 object-contain" />
-          </div>
-          <span class="text-pencil font-hand font-bold">诚意补习学院</span>
-        </a>
-        <p class="text-pencil/60 text-sm leading-relaxed mb-4 font-body">诚意育人，精益求精<br />Sincere Education, Excellence</p>
-        <div class="flex gap-2">
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="w-10 h-10 border-2 border-pencil bg-white flex items-center justify-center text-pencil hover:text-accent hover:bg-accent/5 transition-colors shadow-sketch transform hover:-rotate-6"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="w-10 h-10 border-2 border-pencil bg-white flex items-center justify-center text-pencil hover:text-accent hover:bg-accent/5 transition-colors shadow-sketch transform hover:rotate-6"><i class="fa-brands fa-instagram"></i></a>
-          <button type="button" onclick="showBranchModal()" class="w-10 h-10 border-2 border-pencil bg-white flex items-center justify-center text-pencil hover:text-green-600 hover:bg-green-50 transition-colors shadow-sketch transform hover:-rotate-3 cursor-pointer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
-        </div>
-      </div>
-
-      <!-- Quick links -->
-      <div>
-        <h5 class="text-pencil font-hand font-bold text-sm mb-4 uppercase tracking-wide"><span class="tr" data-zh="导航" data-ms="Pautan" data-en="Links">导航</span></h5>
-        <ul class="flex flex-col gap-2">
-          <li><a href="index.html"   class="text-pencil/70 text-base hover:text-accent transition-colors font-body"><span class="tr" data-zh="首页" data-ms="Utama" data-en="Home">首页</span></a></li>
-          <li><a href="about.html"   class="text-pencil/70 text-base hover:text-accent transition-colors font-body"><span class="tr" data-zh="关于我们" data-ms="Tentang" data-en="About">关于我们</span></a></li>
-          <li><a href="courses.html" class="text-pencil/70 text-base hover:text-accent transition-colors font-body"><span class="tr" data-zh="课程" data-ms="Kursus" data-en="Courses">课程</span></a></li>
-          <li><a href="contact.html" class="text-pencil/70 text-base hover:text-accent transition-colors font-body"><span class="tr" data-zh="联系我们" data-ms="Hubungi" data-en="Contact">联系我们</span></a></li>
-        </ul>
-      </div>
-
-      <!-- Hours -->
-      <div>
-        <h5 class="text-pencil font-hand font-bold text-sm mb-4 uppercase tracking-wide"><span class="tr" data-zh="营业时间" data-ms="Waktu" data-en="Hours">营业时间</span></h5>
-        <div class="text-pencil/70 text-base space-y-1.5 font-body">
-          <div class="flex justify-between"><span><span class="tr" data-zh="周一 – 周五" data-ms="Isnin – Jumaat" data-en="Mon – Fri">周一 – 周五</span></span><span class="text-pencil/50">10:30 AM – 9:00 PM</span></div>
-          <div class="flex justify-between"><span><span class="tr" data-zh="周六" data-ms="Sabtu" data-en="Sat">周六</span></span><span class="text-pencil/50">9:00 AM – 5:00 PM</span></div>
-          <div class="flex justify-between"><span><span class="tr" data-zh="周日" data-ms="Ahad" data-en="Sun">周日</span></span><span class="text-pencil/50"><span class="tr" data-zh="休息" data-ms="Tutup" data-en="Closed">休息</span></span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Copyright -->
-    <div class="mt-10 pt-6 text-center border-t-2 border-dashed border-pencil/20">
-      <p class="text-pencil/50 text-sm font-body">
-        &copy; <span id="current-year">2024</span> 诚意补习学院 · ChengYi Tuition Academy. All rights reserved.
-      </p>
-    </div>
-  </div>
-</footer>
-
-
-<!-- ═══════════════════════════════════════════
-     回到顶部 + 分校 Modal
-════════════════════════════════════════════ -->
-
-<button id="back-to-top" aria-label="回到顶部" title="回到顶部">
-  <i class="fa-solid fa-chevron-up"></i>
-</button>
-
-<div id="branch-modal">
-  <div class="modal-content wobbly-lg">
-    <button onclick="closeBranchModal()" class="absolute -top-3 -right-3 w-9 h-9 bg-white border-2 border-pencil shadow-sketch flex items-center justify-center hover:bg-accent hover:text-white transition-all" style="position:absolute;top:-12px;right:-12px;z-index:10;">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-    <h3 class="text-center font-hand font-bold text-xl text-pencil mb-1"><span class="tr" data-zh="选择您要联系的分校" data-ms="Pilih Cawangan" data-en="Select a Branch">选择您要联系的分校</span></h3>
-    <p class="text-center text-pencil/60 text-sm mb-6 font-body"><span class="tr" data-zh="点击即可通过 WhatsApp 咨询" data-ms="Klik untuk WhatsApp" data-en="Click to inquire via WhatsApp">点击即可通过 WhatsApp 咨询</span></p>
-    <div class="flex flex-col gap-3">
-      <a href="https://wa.me/60177717900?text=您好！我想了解诚意补习学院Mentakab的课程信息。" target="_blank" rel="noopener" class="branch-option wobbly-sm transform -rotate-0.5" onclick="closeBranchModal()">
-        <div class="branch-icon wobbly-sm"><i class="fa-solid fa-school text-pencil"></i></div>
-        <div>
-          <div class="font-hand font-bold text-pencil">Mentakab</div>
-          <div class="text-pencil/60 text-sm font-body">017-7717900</div>
-        </div>
-        <i class="fa-brands fa-whatsapp text-green-500 text-xl ml-auto"></i>
-      </a>
-      <a href="https://wa.me/60173663800?text=您好！我想了解诚意补习学院Setapak的课程信息。" target="_blank" rel="noopener" class="branch-option wobbly-sm transform rotate-0.5" onclick="closeBranchModal()">
-        <div class="branch-icon wobbly-sm"><i class="fa-solid fa-school text-pencil"></i></div>
-        <div>
-          <div class="font-hand font-bold text-pencil">Setapak</div>
-          <div class="text-pencil/60 text-sm font-body">017-3663800</div>
-        </div>
-        <i class="fa-brands fa-whatsapp text-green-500 text-xl ml-auto"></i>
-      </a>
-      <a href="https://wa.me/60122467900?text=您好！我想了解诚意补习学院Wangsa的课程信息。" target="_blank" rel="noopener" class="branch-option wobbly-sm transform -rotate-0.5" onclick="closeBranchModal()">
-        <div class="branch-icon wobbly-sm"><i class="fa-solid fa-school text-pencil"></i></div>
-        <div>
-          <div class="font-hand font-bold text-pencil">Wangsa</div>
-          <div class="text-pencil/60 text-sm font-body">012-2467900</div>
-        </div>
-        <i class="fa-brands fa-whatsapp text-green-500 text-xl ml-auto"></i>
-      </a>
-    </div>
-  </div>
-</div>
-
-  </div><!-- end content-layer -->
-
-<script src="main.js"></script>
-</body>
-</html>
+<!doctype html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S00FG8N2L4"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-S00FG8N2L4');
+</script>
+<title>诚意补习学院 ChengYi · 吉隆坡 Wangsa Maju | 中小学补习</title>
+<meta name="description" content="诚意补习学院 ChengYi — 吉隆坡 Wangsa Maju 首选中小学补习中心，三校联动（Mentakab/Setapak/Wangsa），Google 4.8⭐，KSSR/KSSM 专业辅导。立即预约免费试听！">
+<meta name="keywords" content="补习中心, tuition centre, KL, Wangsa Maju, Setapak, Mentakab, 小学补习, 初中补习, SPM, PT3, KSSR, KSSM, Add Maths, 华文, 英文, 马来文, 数学, 科学">
+<meta name="author" content="ChengYi Tuition Academy">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://chengyi-education.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="诚意补习学院 ChengYi · 吉隆坡 Wangsa Maju | 中小学补习">
+<meta property="og:description" content="三校联动，Google 4.8⭐，专注 KSSR/KSSM 专业辅导。免费试听课预约中！">
+<meta property="og:image" content="https://chengyi-education.com/logo.png">
+<meta property="og:url" content="https://chengyi-education.com/">
+<meta property="og:site_name" content="诚意补习学院 ChengYi">
+<meta property="og:locale" content="zh_Hans">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="诚意补习学院 ChengYi | 中小学补习">
+<meta name="twitter:description" content="三校联动，Google 4.8⭐，KSSR/KSSM 专业辅导。">
+<link rel="icon" type="image/png" href="logo.png">
+<meta name="theme-color" content="#fdfbf7">
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css"></head><body>
+<header><div class="wrap nav"><a class="brand" href="index.html"><img src="logo.png" alt="诚意补习学院 logo"><span>诚意补习学院</span></a>
+<nav class="links" aria-label="主导航"><a href="index.html" aria-current=page data-en="Home" data-ms="Utama">首页</a><a href="about.html" data-en="About" data-ms="Tentang">关于我们</a><a href="courses.html" data-en="Courses" data-ms="Kursus">课程</a><a href="index.html#contact" data-en="Contact" data-ms="Hubungi">联系</a></nav>
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="打开菜单"><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span></button>
+<div class="lang" aria-label="语言"><button class="on" type="button" data-l="zh">中</button><button type="button" data-l="ms">MS</button><button type="button" data-l="en">EN</button></div>
+<a class="btn btn-wa btn-sm nav-book" href="index.html#contact" data-en="Book" data-ms="Tempah">预约</a></div>
+<nav id="mobile-nav" class="mobile-nav" hidden aria-label="手机导航"><div class="wrap"><a href="index.html" aria-current=page data-en="Home" data-ms="Utama">首页</a><a href="about.html" data-en="About" data-ms="Tentang">关于我们</a><a href="courses.html" data-en="Courses" data-ms="Kursus">课程</a><a href="index.html#contact" data-en="Contact" data-ms="Hubungi">联系</a></div></nav></header><main>
+<section style="padding-top:56px"><div class="wrap grid hero" style="align-items:center">
+<div class="card wob tape" style="transform:rotate(-1.5deg);padding:28px;box-shadow:8px 8px 0 #2d2d2d"><img src="logo.png" alt="诚意教育 logo" style="width:100%;max-width:340px;margin:0 auto" width="340" height="340"></div>
+<div><span class="kicker">诚意育人，精益求精</span>
+<h1 style="font-size:clamp(36px,6vw,60px);margin:10px 0 16px" data-en="Wangsa Maju KL Primary & Secondary Tuition · ChengYi Academy" data-ms="Tuisyen Sekolah Rendah &amp; Menengah Wangsa Maju KL · ChengYi">吉隆坡 Wangsa Maju 中小学补习 · 诚意补习学院</h1>
+<p class="lead" style="font-family:Kalam;font-size:20px;color:#2d2d2d">Mentakab · Setapak · Wangsa Maju 三校</p><p class="lead">从小学低年组到 F4–F5，再到安亲班，三校提供相同课程体系。十余年专注本地中小学生的课后辅导。</p>
+<p style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px"><a class="btn btn-wa" href="#contact" data-en="Book a trial class on WhatsApp" data-ms="Tempah kelas percubaan">WhatsApp 预约试听</a><a class="btn" href="courses.html" data-en="See courses" data-ms="Lihat kursus">查看课程</a></p></div>
+</div></section>
+<section style="background:#fff;border-block:2px dashed var(--line)"><div class="wrap"><span class="kicker">Courses</span><h2>年级与科目</h2>
+<div class="grid g3" style="margin-top:24px"><a href="courses.html" class="card wob" style="text-decoration:none"><h3 style="font-size:22px">小学【低年组】</h3><p style="margin:4px 0 0;color:#666">Primary (lower) · 6 科</p></a><a href="courses.html" class="card wob" style="text-decoration:none"><h3 style="font-size:22px">小学【高年组】</h3><p style="margin:4px 0 0;color:#666">Primary (upper) · 8 科</p></a><a href="courses.html" class="card wob" style="text-decoration:none"><h3 style="font-size:22px">中学【F1 - F3】</h3><p style="margin:4px 0 0;color:#666">Form 1 – 3 · 8 科</p></a><a href="courses.html" class="card wob" style="text-decoration:none"><h3 style="font-size:22px">中学【F4 - F5】</h3><p style="margin:4px 0 0;color:#666">Form 4 – 5 (SPM) · 14 科</p></a><a href="courses.html" class="card wob" style="text-decoration:none"><h3 style="font-size:22px">安亲班</h3><p style="margin:4px 0 0;color:#666">Day care · 5 项服务</p></a>
+<a href="courses.html" class="card wob note" style="text-decoration:none;display:flex;align-items:center"><h3 style="font-size:22px">查看全部科目 →</h3></a></div></div></section>
+<section><div class="wrap"><span class="kicker">Why us</span><h2>为什么选择诚意？</h2><div class="grid g2" style="margin-top:24px"><div class="card wob "><h3 style="font-size:22px">常年不换专业教师团队</h3><p style="margin:8px 0 0">超过二十位硕士毕业老师，深研幼儿班、安亲班、小学和中学课程</p></div><div class="card wob note"><h3 style="font-size:22px">成绩跟踪</h3><p style="margin:8px 0 0">定期评估，及时调整教学方案，为每一位学生量身定制教学方案</p></div><div class="card wob "><h3 style="font-size:22px">Newton Memory 有趣漫画教学</h3><p style="margin:8px 0 0">我们遵循 UASA 教育制度，并采用漫画与课本知识结合，让课程简单易懂</p></div><div class="card wob note"><h3 style="font-size:22px">全面减轻家长负担</h3><p style="margin:8px 0 0">成立家长与老师私人群组，让家长随时可以联系老师，关心孩子的成长与安全</p></div></div></div></section>
+<section><div class="wrap"><span class="kicker">Branches</span><h2>三所分校</h2><div class="grid g3" style="margin-top:28px"><article class="card wob tape" style="transform:rotate(-1deg)"><img src="mentakab.jpg" alt="Mentakab 分校外观" style="width:100%;height:170px;object-fit:cover;border:2px solid #2d2d2d;border-radius:6px">
+<h3 style="font-size:26px;margin-top:14px">Mentakab</h3><p style="margin:6px 0">61-1, Jalan Temerloh, Mentakab</p><p style="margin:0 0 14px;font-weight:700">017-7717900</p>
+<a class="btn btn-wa btn-sm" href="https://wa.me/60177717900?text=%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E8%AF%9A%E6%84%8F%E8%A1%A5%E4%B9%A0%E5%AD%A6%E9%99%A2Mentakab%E7%9A%84%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF%E3%80%82" target="_blank" rel="noopener">WhatsApp Mentakab</a> <a href="mentakab.html" style="font-size:14px;margin-left:8px">分校页 →</a></article><article class="card wob tape" style="transform:rotate(0.6deg)"><img src="setapak.jpg" alt="Setapak 分校外观" style="width:100%;height:170px;object-fit:cover;border:2px solid #2d2d2d;border-radius:6px">
+<h3 style="font-size:26px;margin-top:14px">Setapak</h3><p style="margin:6px 0">Jalan 1/23f, Taman Teratai Mewah, KL</p><p style="margin:0 0 14px;font-weight:700">017-3663800</p>
+<a class="btn btn-wa btn-sm" href="https://wa.me/60173663800?text=%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E8%AF%9A%E6%84%8F%E8%A1%A5%E4%B9%A0%E5%AD%A6%E9%99%A2Setapak%E7%9A%84%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF%E3%80%82" target="_blank" rel="noopener">WhatsApp Setapak</a> <a href="setapak.html" style="font-size:14px;margin-left:8px">分校页 →</a></article><article class="card wob tape" style="transform:rotate(-0.4deg)"><img src="wangsa.jpg" alt="Wangsa Maju 分校外观" style="width:100%;height:170px;object-fit:cover;border:2px solid #2d2d2d;border-radius:6px">
+<h3 style="font-size:26px;margin-top:14px">Wangsa Maju</h3><p style="margin:6px 0">123-1, Jalan 3/23A, Taman Danau Kota, Wangsa Maju, 53000 KL</p><p style="margin:0 0 14px;font-weight:700">012-2467900</p>
+<a class="btn btn-wa btn-sm" href="https://wa.me/60122467900?text=%E6%82%A8%E5%A5%BD%EF%BC%81%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%E8%AF%9A%E6%84%8F%E8%A1%A5%E4%B9%A0%E5%AD%A6%E9%99%A2Wangsa%E7%9A%84%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF%E3%80%82" target="_blank" rel="noopener">WhatsApp Wangsa Maju</a> <a href="wangsa.html" style="font-size:14px;margin-left:8px">分校页 →</a></article></div></div></section>
+<section id="contact" style="background:#fff;border-block:2px dashed var(--line)"><div class="wrap grid g2"><div><span class="kicker">Contact</span><h2>预约试听</h2>
+<p class="lead">选好分校，填写后会直接打开 WhatsApp 发给该分校。</p><p><b>营业时间</b><br>周一 – 周五 10:30 AM – 9:00 PM<br>周六 9:00 AM – 5:00 PM<br>周日 休息</p></div><form id="bookForm" class="card wob" style="max-width:560px">
+<h3 style="font-size:26px" data-en="Book a trial class" data-ms="Tempah kelas percubaan">预约 / 咨询</h3><p style="margin:0;color:#666;font-size:14px">填写后将以 WhatsApp 发送至所选分校</p>
+<label for="b">选择分校 *</label><select id="b" name="branch" required><option value="">—</option><option value="60177717900">Mentakab · 017-7717900</option><option value="60173663800">Setapak · 017-3663800</option><option value="60122467900">Wangsa · 012-2467900</option></select>
+<label for="n">学生姓名 *</label><input id="n" name="name" required>
+<label for="p">电话 / WhatsApp *</label><input id="p" name="phone" type="tel" required>
+<label for="g">年级</label><select id="g" name="grade"><option value="">—</option><option>K1</option><option>K2</option><option>Year 1</option><option>Year 2</option><option>Year 3</option><option>Year 4</option><option>Year 5</option><option>Year 6</option><option>F1</option><option>F2</option><option>F3</option><option>F4</option><option>F5</option></select>
+<label for="m">咨询内容</label><textarea id="m" name="msg" rows="3"></textarea>
+<button class="btn btn-wa" style="margin-top:16px" data-en="Send via WhatsApp" data-ms="Hantar melalui WhatsApp">通过 WhatsApp 发送</button><p style="font-size:13px;color:#777">您的信息将严格保密</p></form></div></section></main><footer><div class="wrap"><div class="grid">
+<div><h3>诚意补习学院</h3><p>诚意育人，精益求精</p><p>Sincere Education, Excellence</p>
+<ul style="margin-top:10px"><li>Mentakab · 017-7717900</li><li>Setapak · 017-3663800</li><li>Wangsa · 012-2467900</li></ul></div>
+<div><h3 data-en="Pages" data-ms="Halaman">导航</h3><ul><li><a href="index.html">首页</a></li><li><a href="about.html">关于我们</a></li><li><a href="courses.html">课程</a></li><li><a href="index.html#contact">联系我们</a></li></ul></div>
+<div><h3 data-en="Opening hours" data-ms="Waktu operasi">营业时间</h3><ul><li>周一 – 周五：10:30 AM – 9:00 PM</li><li>周六：9:00 AM – 5:00 PM</li><li>周日：休息</li></ul></div>
+</div><p class="copy">© 2024 诚意补习学院 · ChengYi Tuition Academy. All rights reserved.</p></div></footer><script src="site.js"></script></body></html>

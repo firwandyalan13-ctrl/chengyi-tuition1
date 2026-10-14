@@ -17,3 +17,8 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Local dev (screenshots)
+node_modules/
+package.json
+package-lock.json
