@@ -18,6 +18,33 @@ def canonical_path(cur: str) -> str:
     return f"https://chengyi-education.com/{cur}"
 
 
+# SEO head values aligned with main (PR #1, e0458ad)
+OG_TITLE = "诚意补习学院 ChengYi · 吉隆坡 Wangsa Maju | 中小学补习"
+OG_DESCRIPTION = "三校联动，Google 4.8⭐，专注 KSSR/KSSM 专业辅导。免费试听课预约中！"
+TWITTER_TITLE = "诚意补习学院 ChengYi | 中小学补习"
+TWITTER_DESCRIPTION = "三校联动，Google 4.8⭐，KSSR/KSSM 专业辅导。"
+META_KEYWORDS = (
+    "补习中心, tuition centre, KL, Wangsa Maju, Setapak, Mentakab, 小学补习, 初中补习, "
+    "SPM, PT3, KSSR, KSSM, Add Maths, 华文, 英文, 马来文, 数学, 科学"
+)
+
+H1_INDEX = (
+    "吉隆坡 Wangsa Maju 中小学补习 · 诚意补习学院",
+    "Wangsa Maju KL Primary & Secondary Tuition · ChengYi Academy",
+    "Tuisyen Sekolah Rendah &amp; Menengah Wangsa Maju KL · ChengYi",
+)
+H1_ABOUT = (
+    "三校联动，服务更多家庭",
+    "Three Branches, Serving More Families",
+    "Tiga Cawangan, Layanan Lebih Baik",
+)
+H1_COURSES = (
+    "全面课程，覆盖各年级",
+    "Comprehensive Courses",
+    "Kursus Lengkap",
+)
+
+
 GA = """<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S00FG8N2L4"></script>
 <script>
@@ -53,12 +80,28 @@ def header_block(cur: str) -> str:
 
 def head(title, desc, cur):
     canon = canonical_path(cur)
-    return f"""<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    return f"""<!doctype html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 {GA}
-<title>{title}</title><meta name="description" content="{desc}"><link rel="canonical" href="{canon}">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<meta name="keywords" content="{META_KEYWORDS}">
+<meta name="author" content="ChengYi Tuition Academy">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{canon}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{OG_TITLE}">
+<meta property="og:description" content="{OG_DESCRIPTION}">
+<meta property="og:image" content="https://chengyi-education.com/logo.png">
+<meta property="og:url" content="{canon}">
+<meta property="og:site_name" content="诚意补习学院 ChengYi">
+<meta property="og:locale" content="zh_Hans">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{TWITTER_TITLE}">
+<meta name="twitter:description" content="{TWITTER_DESCRIPTION}">
 <link rel="icon" type="image/png" href="logo.png">
+<meta name="theme-color" content="#fdfbf7">
 <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-<meta property="og:url" content="{canon}"><meta property="og:image" content="https://chengyi-education.com/logo.png"><link rel="stylesheet" href="site.css"></head><body>
+<link rel="stylesheet" href="site.css"></head><body>
 {header_block(cur)}<main>"""
 
 
@@ -217,15 +260,15 @@ def write(name: str, html: str):
 def main():
     idx = (
         head(
-            "诚意补习学院 ChengYi · Mentakab / Setapak / Wangsa Maju 中小学补习",
-            "诚意补习学院在 Mentakab、Setapak、Wangsa Maju 三校提供小学至中学（F1–F5）补习及安亲班。",
+            "诚意补习学院 ChengYi · 吉隆坡 Wangsa Maju | 中小学补习",
+            "诚意补习学院 ChengYi — 吉隆坡 Wangsa Maju 首选中小学补习中心，三校联动（Mentakab/Setapak/Wangsa），Google 4.8⭐，KSSR/KSSM 专业辅导。立即预约免费试听！",
             "index.html",
         )
         + f"""
 <section style="padding-top:56px"><div class="wrap grid hero" style="align-items:center">
 <div class="card wob tape" style="transform:rotate(-1.5deg);padding:28px;box-shadow:8px 8px 0 #2d2d2d"><img src="logo.png" alt="诚意教育 logo" style="width:100%;max-width:340px;margin:0 auto" width="340" height="340"></div>
 <div><span class="kicker">诚意育人，精益求精</span>
-<h1 style="font-size:clamp(36px,6vw,60px);margin:10px 0 16px" data-en="Primary &amp; secondary tuition in Mentakab, Setapak &amp; Wangsa Maju" data-ms="Tuisyen rendah &amp; menengah di Mentakab, Setapak &amp; Wangsa Maju">吉隆坡 Wangsa Maju 中小学补习 · 诚意补习学院</h1>
+<h1 style="font-size:clamp(36px,6vw,60px);margin:10px 0 16px" data-en="{H1_INDEX[1]}" data-ms="{H1_INDEX[2]}">{H1_INDEX[0]}</h1>
 <p class="lead" style="font-family:Kalam;font-size:20px;color:#2d2d2d">Mentakab · Setapak · Wangsa Maju 三校</p><p class="lead">从小学低年组到 F4–F5，再到安亲班，三校提供相同课程体系。十余年专注本地中小学生的课后辅导。</p>
 <p style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px"><a class="btn btn-wa" href="#contact" data-en="Book a trial class on WhatsApp" data-ms="Tempah kelas percubaan">WhatsApp 预约试听</a><a class="btn" href="courses.html" data-en="See courses" data-ms="Lihat kursus">查看课程</a></p></div>
 </div></section>
@@ -250,12 +293,12 @@ def main():
     ab = (
         head(
             "关于我们 · 诚意补习学院 ChengYi",
-            "诚意补习学院秉承「诚意育人，精益求精」，在 Mentakab、Setapak 与 Wangsa Maju 设立三所分校。",
+            "了解诚意补习学院三校联动、办学特色与家长真实评价。Mentakab、Setapak、Wangsa Maju 专业中小学补习。",
             "about.html",
         )
         + f"""
 <section style="padding-top:56px"><div class="wrap" style="max-width:720px"><span class="kicker">About Us</span>
-<h1 style="font-size:clamp(34px,5vw,52px);margin:8px 0 14px" data-en="Three branches, serving more families" data-ms="Tiga cawangan, lebih banyak keluarga">三校联动，服务更多家庭</h1>
+<h1 style="font-size:clamp(34px,5vw,52px);margin:8px 0 14px" data-en="{H1_ABOUT[1]}" data-ms="{H1_ABOUT[2]}">{H1_ABOUT[0]}</h1>
 <p class="lead">诚意补习学院秉承「诚意育人，精益求精」的办学宗旨，在 Mentakab、Setapak 与 Wangsa Maju 设立三所分校，十余年来专注为本地中小学生提供高质量、个性化的课后辅导服务。</p>
 <a class="btn btn-wa" href="index.html#contact" style="margin-top:14px">WhatsApp 预约试听</a></div></section>
 <section style="background:#fff;border-block:2px dashed var(--line)"><div class="wrap"><span class="kicker">Awards</span><h2>权威认证</h2>
@@ -269,12 +312,12 @@ def main():
     cs = (
         head(
             "课程 · 诚意补习学院 ChengYi",
-            "小学低年组、高年组、F1–F3、F4–F5（SPM）各科补习及安亲班，三校课程相同。",
+            "诚意补习学院全面课程：小学低/高年组、中学 F1-F5、安亲班。KSSR/KSSM 专业辅导。",
             "courses.html",
         )
-        + """
+        + f"""
 <section style="padding-top:56px;padding-bottom:24px"><div class="wrap"><span class="kicker">Courses</span>
-<h1 style="font-size:clamp(34px,5vw,52px);margin:8px 0 12px" data-en="Courses for every grade" data-ms="Kursus untuk semua tahap">全面课程，覆盖各年级</h1>
+<h1 style="font-size:clamp(34px,5vw,52px);margin:8px 0 12px" data-en="{H1_COURSES[1]}" data-ms="{H1_COURSES[2]}">{H1_COURSES[0]}</h1>
 <p class="lead">三校提供相同课程体系，涵盖小学至中学及安亲班。直接点每一组的按钮，就能用 WhatsApp 询问上课时间与学费。</p>
 <nav style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px">"""
         + "".join(f'<a class="btn btn-sm" href="#g{i}">{z}</a>' for i, (z, e, s) in enumerate(GROUPS))
